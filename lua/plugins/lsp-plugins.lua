@@ -64,13 +64,29 @@ return {
                 end,
             })
 
-            -- Cosmetics
-            vim.diagnostic.config { float = { border = "rounded" }, }
-
+            -- Sign icons
             local signs = { Error = '', Warn = '', Hint = '󰌶', Info = '' }
             for type, icon in pairs(signs) do
                 local hl = 'DiagnosticSign' .. type
                 vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+            end
+
+            -- Float borders
+            local border = {
+                {'╭', 'FloatBorder'},  -- '🭽' -- upper-left line
+                {'─', 'FloatBorder'},  -- '▔' -- top line
+                {'╮', 'FloatBorder'},  -- '🭾' -- upper-right line
+                {'│', 'FloatBorder'},  -- '▕' -- right line
+                {'╯', 'FloatBorder'},  -- '🭿' -- bottom-right line
+                {'─', 'FloatBorder'},  -- '▁' -- bottom line
+                {'╰', 'FloatBorder'},  -- '🭼' -- bottom-left line
+                {'│', 'FloatBorder'},  -- '▏' -- left line
+            }
+            local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+            function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+                opts = opts or {}
+                opts.border = opts.border or border
+                return orig_util_open_floating_preview(contents, syntax, opts, ...)
             end
         end
     }
