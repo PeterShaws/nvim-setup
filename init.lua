@@ -2,23 +2,24 @@ local opt = vim.opt
 local cmd = vim.api.nvim_command
 
 vim.g.mapleader = ' '
+vim.g.localleader = '\\'
 
 --[[ Basics ]]
 cmd('filetype plugin on')            -- Enable filetype plugin
 
 --[[ Context ]]
-opt.colorcolumn = "80"               -- Show col for max line length
+opt.colorcolumn = '80'               -- Show col for max line length
 opt.number = true                    -- Show line numbers
 opt.relativenumber = true            -- Show relative line numbers
 opt.scrolloff = 4                    -- Min num lines of context
-opt.signcolumn = "yes"               -- Show the sign column
+opt.signcolumn = 'yes'               -- Show the sign column
 
 --[[ Filetypes ]]
-opt.encoding = "utf8"                -- String encoding to use
-opt.fileencoding = "utf8"            -- File encoding to use
+opt.encoding = 'utf8'                -- String encoding to use
+opt.fileencoding = 'utf8'            -- File encoding to use
 
 --[[ Theme ]]
-opt.syntax = "ON"                    -- Allow syntax highlighting
+opt.syntax = 'ON'                    -- Allow syntax highlighting
 opt.termguicolors = true             -- If term supports ui color then enable
 cmd('hi ColorColumn guibg=#11151b')  -- Set 80-char ruler color
 opt.fillchars = 'stl: '              -- Hide current status line fill char
@@ -35,3 +36,22 @@ opt.foldenable = false               -- Don't fold code by default
 --[[ Splits ]]
 opt.splitright = true                -- Place new window to the right of current one
 opt.splitbelow = true                -- Place new window below the current one
+
+--[[ Lazy plugin manager ]]
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        'git',
+        'clone',
+        '--filter=blob:none',
+        'https://github.com/folke/lazy.nvim.git',
+        '--branch=stable', -- latest stable release
+        lazypath,
+    })
+end
+vim.opt.rtp:prepend(lazypath)
+
+local plugins = {}
+local opts = {}
+
+require('lazy').setup(plugins, opts)
