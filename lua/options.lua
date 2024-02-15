@@ -1,10 +1,14 @@
-local opt = vim.opt
 local cmd = vim.api.nvim_command
+local opt = vim.opt
+local g = vim.g
 
 --[[ Basics ]]
 cmd('filetype plugin on')            -- Enable filetype plugin
-vim.g.mapleader = ' '                -- Set global <Leader> key
-vim.g.localleader = '\\'             -- Set local <Leader> key
+g.mapleader = ' '                    -- Set global <Leader> key
+g.localleader = '\\'                 -- Set local <Leader> key
+g.t_co = 256                         -- Enable 256-color support
+g.background = "dark"                -- Enforce terminal background
+opt.smartcase = true                 -- Use smartcase search
 
 --[[ Context ]]
 opt.colorcolumn = '80'               -- Show col for max line length
