@@ -1,3 +1,29 @@
+vim.opt.updatetime = 400
+
+local function highlight_symbol(event)
+    local id = vim.tbl_get(event, 'data', 'client_id')
+    local client = id and vim.lsp.get_client_by_id(id)
+    if client == nil or not client.supports_method('textDocument/documentHighlight') then
+        return
+    end
+
+    local group = vim.api.nvim_create_augroup('highlight_symbol', {clear = false})
+
+    vim.api.nvim_clear_autocmds({buffer = event.buf, group = group})
+
+    vim.api.nvim_create_autocmd({'CursorHold', 'CursorHoldI'}, {
+        group = group,
+        buffer = event.buf,
+        callback = vim.lsp.buf.document_highlight,
+    })
+
+    vim.api.nvim_create_autocmd({'CursorMoved', 'CursorMovedI'}, {
+        group = group,
+        buffer = event.buf,
+        callback = vim.lsp.buf.clear_references,
+    })
+end
+
 return {
     {
         'williamboman/mason.nvim',
@@ -61,6 +87,8 @@ return {
                     vim.keymap.set('n', '<Leader>f', function()
                         vim.lsp.buf.format { async = true }
                     end, opts)
+
+                    highlight_symbol(ev)
                 end,
             })
 
@@ -88,6 +116,40 @@ return {
                 opts.border = opts.border or border
                 return orig_util_open_floating_preview(contents, syntax, opts, ...)
             end
+
+            --[[ Completion kinds ]]
+            local M = {}
+            M.icons = {
+                Class = " ",
+                Color = " ",
+                Constant = " ",
+                Constructor = " ",
+                Enum = " ",
+                EnumMember = " ",
+                Field = "󰄶 ",
+                File = " ",
+                Folder = " ",
+                Function = " ",
+                Interface = "󰜰",
+                Keyword = "󰌆 ",
+                Method = "ƒ ",
+                Module = "󰏗 ",
+                Property = " ",
+                Snippet = "󰘍 ",
+                Struct = " ",
+                Text = " ",
+                Unit = " ",
+                Value = "󰎠 ",
+                Variable = " ",
+            }
+            function M.setup()
+                local kinds = vim.lsp.protocol.CompletionItemKind
+                for i, kind in ipairs(kinds) do
+                    kinds[i] = M.icons[kind] or kind
+                end
+            end
+            M.setup()
+            return M
         end
     }
 }
