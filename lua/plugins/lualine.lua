@@ -3,9 +3,12 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
         options = {
-            theme = 'ayu',
-            component_separators = { left = '│', right = '│' },
-            section_separators = { left = '', right = '' },
-        }
+            theme = 'iceberg',
+            component_separators = '⁞',
+            section_separators = '',
+            disabled_filetypes = {
+                statusline = { 'neo-tree' },
+            },
+        },
     },
 }

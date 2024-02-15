@@ -7,17 +7,17 @@ local function highlight_symbol(event)
         return
     end
 
-    local group = vim.api.nvim_create_augroup('highlight_symbol', {clear = false})
+    local group = vim.api.nvim_create_augroup('highlight_symbol', { clear = false })
 
-    vim.api.nvim_clear_autocmds({buffer = event.buf, group = group})
+    vim.api.nvim_clear_autocmds({ buffer = event.buf, group = group })
 
-    vim.api.nvim_create_autocmd({'CursorHold', 'CursorHoldI'}, {
+    vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
         group = group,
         buffer = event.buf,
         callback = vim.lsp.buf.document_highlight,
     })
 
-    vim.api.nvim_create_autocmd({'CursorMoved', 'CursorMovedI'}, {
+    vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
         group = group,
         buffer = event.buf,
         callback = vim.lsp.buf.clear_references,
@@ -33,13 +33,13 @@ return {
                     package_installed   = '●',  -- '✓',
                     package_pending     = '◌',  -- '➜',
                     package_uninstalled = '○',  -- '✗'
-                }
-            }
-        }
+                },
+            },
+        },
     },
     {
         'williamboman/mason-lspconfig.nvim',
-        opts = {}
+        opts = {},
     },
     {
         'neovim/nvim-lspconfig',
@@ -85,7 +85,7 @@ return {
                     vim.keymap.set({ 'n', 'v' }, '<Leader>ca', vim.lsp.buf.code_action, opts)
                     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
                     vim.keymap.set('n', '<Leader>f', function()
-                        vim.lsp.buf.format { async = true }
+                        vim.lsp.buf.format({ async = true })
                     end, opts)
 
                     highlight_symbol(ev)
@@ -93,7 +93,7 @@ return {
             })
 
             -- Sign icons
-            local signs = { Error = '', Warn = '', Hint = '󰌶', Info = '' }
+            local signs = { Error = ' ', Warn = ' ', Hint = '󰌶 ', Info = ' ' }
             for type, icon in pairs(signs) do
                 local hl = 'DiagnosticSign' .. type
                 vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -101,14 +101,14 @@ return {
 
             -- Float borders
             local border = {
-                {'╭', 'FloatBorder'},  -- '🭽' -- upper-left line
-                {'─', 'FloatBorder'},  -- '▔' -- top line
-                {'╮', 'FloatBorder'},  -- '🭾' -- upper-right line
-                {'│', 'FloatBorder'},  -- '▕' -- right line
-                {'╯', 'FloatBorder'},  -- '🭿' -- bottom-right line
-                {'─', 'FloatBorder'},  -- '▁' -- bottom line
-                {'╰', 'FloatBorder'},  -- '🭼' -- bottom-left line
-                {'│', 'FloatBorder'},  -- '▏' -- left line
+                { '╭', 'FloatBorder' }, -- '🭽' -- upper-left line
+                { '─', 'FloatBorder' }, -- '▔' -- top line
+                { '╮', 'FloatBorder' }, -- '🭾' -- upper-right line
+                { '│', 'FloatBorder' }, -- '▕' -- right line
+                { '╯', 'FloatBorder' }, -- '🭿' -- bottom-right line
+                { '─', 'FloatBorder' }, -- '▁' -- bottom line
+                { '╰', 'FloatBorder' }, -- '🭼' -- bottom-left line
+                { '│', 'FloatBorder' }, -- '▏' -- left line
             }
             local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
             function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
@@ -116,40 +116,6 @@ return {
                 opts.border = opts.border or border
                 return orig_util_open_floating_preview(contents, syntax, opts, ...)
             end
-
-            --[[ Completion kinds ]]
-            local M = {}
-            M.icons = {
-                Class = " ",
-                Color = " ",
-                Constant = " ",
-                Constructor = " ",
-                Enum = " ",
-                EnumMember = " ",
-                Field = "󰄶 ",
-                File = " ",
-                Folder = " ",
-                Function = " ",
-                Interface = "󰜰",
-                Keyword = "󰌆 ",
-                Method = "ƒ ",
-                Module = "󰏗 ",
-                Property = " ",
-                Snippet = "󰘍 ",
-                Struct = " ",
-                Text = " ",
-                Unit = " ",
-                Value = "󰎠 ",
-                Variable = " ",
-            }
-            function M.setup()
-                local kinds = vim.lsp.protocol.CompletionItemKind
-                for i, kind in ipairs(kinds) do
-                    kinds[i] = M.icons[kind] or kind
-                end
-            end
-            M.setup()
-            return M
-        end
-    }
+        end,
+    },
 }

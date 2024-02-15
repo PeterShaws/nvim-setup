@@ -16,5 +16,5 @@ return {
             },
         })
         vim.keymap.set('n', '<Leader>gf', vim.lsp.buf.format, {})
-    end
+    end,
 }

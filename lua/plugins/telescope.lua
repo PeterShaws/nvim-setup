@@ -9,8 +9,8 @@ return {
                     prompt_prefix = ' ',
                     selection_caret = ' ',
                     entry_prefix = '  ',
-                    multi_icon = ' '
-                }
+                    multi_icon = ' ',
+                },
             })
             local builtin = require('telescope.builtin')
             vim.keymap.set('n', '<Leader>ff', builtin.find_files, {})
@@ -29,11 +29,11 @@ return {
             telescope.setup({
                 extensions = {
                     ['ui-select'] = {
-                        require('telescope.themes').get_dropdown({})
-                    }
-                }
+                        require('telescope.themes').get_dropdown({}),
+                    },
+                },
             })
-            telescope.load_extension("ui-select")
-        end
-    }
+            telescope.load_extension('ui-select')
+        end,
+    },
 }

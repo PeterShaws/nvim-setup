@@ -1,3 +1,31 @@
+local kind_icons = {
+    Text = '',
+    Method = '󰆧',
+    Function = '󰊕',
+    Constructor = '',
+    Field = '󰇽',
+    Variable = '󰂡',
+    Class = '󰠱',
+    Interface = '',
+    Module = '',
+    Property = '󰜢',
+    Unit = '',
+    Value = '󰎠',
+    Enum = '',
+    Keyword = '󰌋',
+    Snippet = '',
+    Color = '󰏘',
+    File = '󰈙',
+    Reference = '',
+    Folder = '󰉋',
+    EnumMember = '',
+    Constant = '󰏿',
+    Struct = '',
+    Event = '',
+    Operator = '󰆕',
+    TypeParameter = '󰅲',
+}
+
 return {
     { 'hrsh7th/cmp-nvim-lsp' },
     {
@@ -33,10 +61,41 @@ return {
                 sources = cmp.config.sources({
                     { name = 'nvim_lsp' },
                     { name = 'luasnip' },
-                }, {
-                    { name = 'buffer' },
+                    }, {
+                        { name = 'buffer' },
                 }),
+                formatting = {
+                    format = function(entry, vim_item)
+                        vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+                        vim_item.menu = ({
+                            buffer = '[Buffer]',
+                            nvim_lsp = '[LSP]',
+                            luasnip = '[LuaSnip]',
+                            nvim_lua = '[Lua]',
+                            latex_symbols = '[LaTeX]',
+                        })[entry.source.name] or entry.source.name
+                        return vim_item
+                    end,
+                },
             })
+
+            local highlight = vim.api.nvim_set_hl
+            -- gray
+            highlight(0, 'CmpItemAbbrDeprecated', { bg = 'NONE', strikethrough = true, fg = '#808080' })
+            -- blue
+            highlight(0, 'CmpItemAbbrMatch', { bg = 'NONE', fg = '#569CD6' })
+            highlight(0, 'CmpItemAbbrMatchFuzzy', { link = 'CmpIntemAbbrMatch' })
+            -- light blue
+            highlight(0, 'CmpItemKindVariable', { bg = 'NONE', fg = '#9CDCFE' })
+            highlight(0, 'CmpItemKindInterface', { link = 'CmpItemKindVariable' })
+            highlight(0, 'CmpItemKindText', { link = 'CmpItemKindVariable' })
+            -- pink
+            highlight(0, 'CmpItemKindFunction', { bg = 'NONE', fg = '#C586C0' })
+            highlight(0, 'CmpItemKindMethod', { link = 'CmpItemKindFunction' })
+            -- front
+            highlight(0, 'CmpItemKindKeyword', { bg = 'NONE', fg = '#D4D4D4' })
+            highlight(0, 'CmpItemKindProperty', { link = 'CmpItemKindKeyword' })
+            highlight(0, 'CmpItemKindUnit', { link = 'CmpItemKindKeyword' })
         end,
     },
 }

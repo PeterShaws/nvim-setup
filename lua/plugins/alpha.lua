@@ -1,31 +1,14 @@
 return {
-  'goolord/alpha-nvim',
-  dependencies = {
-    'nvim-tree/nvim-web-devicons',
-  },
+    'goolord/alpha-nvim',
+    dependencies = {
+        'nvim-tree/nvim-web-devicons',
+        'nvim-lua/plenary.nvim',
+    },
 
-  config = function()
-    local alpha = require('alpha')
-    local dashboard = require('alpha.themes.startify')
+    config = function()
+        local alpha = require('alpha')
+        local theta = require('alpha.themes.theta')
 
-    dashboard.section.header.val = {
-      [[                                                                       ]],
-      [[                                                                       ]],
-      [[                                                                       ]],
-      [[                                                                       ]],
-      [[                                                                     ]],
-      [[       ████ ██████           █████      ██                     ]],
-      [[      ███████████             █████                             ]],
-      [[      █████████ ███████████████████ ███   ███████████   ]],
-      [[     █████████  ███    █████████████ █████ ██████████████   ]],
-      [[    █████████ ██████████ █████████ █████ █████ ████ █████   ]],
-      [[  ███████████ ███    ███ █████████ █████ █████ ████ █████  ]],
-      [[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
-      [[                                                                       ]],
-      [[                                                                       ]],
-      [[                                                                       ]],
-    }
-
-    alpha.setup(dashboard.opts)
-  end,
+        alpha.setup(theta.config)
+    end,
 }

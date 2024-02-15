@@ -26,20 +26,20 @@ return {
             -- Actions
             map('n', '<Leader>hs', gs.stage_hunk)
             map('n', '<Leader>hr', gs.reset_hunk)
-            map('v', '<Leader>hs', function() gs.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
-            map('v', '<Leader>hr', function() gs.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end)
+            map('v', '<Leader>hs', function() gs.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') }) end)
+            map('v', '<Leader>hr', function() gs.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') }) end)
             map('n', '<Leader>hS', gs.stage_buffer)
             map('n', '<Leader>hu', gs.undo_stage_hunk)
             map('n', '<Leader>hR', gs.reset_buffer)
             map('n', '<Leader>hp', gs.preview_hunk)
-            map('n', '<Leader>hb', function() gs.blame_line{full=true} end)
+            map('n', '<Leader>hb', function() gs.blame_line({ full = true }) end)
             map('n', '<Leader>tb', gs.toggle_current_line_blame)
             map('n', '<Leader>hd', gs.diffthis)
             map('n', '<Leader>hD', function() gs.diffthis('~') end)
             map('n', '<Leader>td', gs.toggle_deleted)
 
             -- Text object
-            map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
-        end
-    }
+            map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+        end,
+    },
 }

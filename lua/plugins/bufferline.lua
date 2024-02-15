@@ -11,10 +11,10 @@ return {
                         text = 'File Explorer',
                         highlight = 'Directory',
                         separator = true,
-                        text_align = 'center'
-                    }
-                }
-            }
+                        text_align = 'center',
+                    },
+                },
+            },
         })
 
         local map = vim.keymap.set

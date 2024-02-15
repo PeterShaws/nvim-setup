@@ -4,19 +4,21 @@ local function map(mode, lhs, rhs, opts)
 end
 
 --[[ Insert mode convenience ]]
-map('i', 'jk', '<Esc>')              -- Exit insert mode
-map('i', '<A-h>', '<Left>')          -- Move cursor left
-map('i', '<A-j>', '<Down>')          -- Move cursor down
-map('i', '<A-k>', '<Up>')            -- Move cursor up
-map('i', '<A-l>', '<Right>')         -- Move cursor right
+map('i', 'jk', '<esc>')                     -- exit insert mode
+map('i', '<a-h>', '<left>')                 -- move cursor left
+map('i', '<a-j>', '<down>')                 -- move cursor down
+map('i', '<a-k>', '<up>')                   -- move cursor up
+map('i', '<a-l>', '<right>')                -- move cursor right
 
 --[[ Window navigation ]]
-map('n', '<C-h>', '<C-w>h')          -- Focus window to the left
-map('n', '<C-j>', '<C-w>j')          -- Focus window below
-map('n', '<C-k>', '<C-w>k')          -- Focus window above
-map('n', '<C-l>', '<C-w>l')          -- Focus window to the right
-map('n', '<C-C>', '<C-w>c')          -- Close current window
-map('n', '<Leader>h', [[:noh<CR>]])  -- Clear search highlight
+map('n', '<c-h>', '<c-w>h')                 -- focus window to the left
+map('n', '<c-j>', '<c-w>j')                 -- focus window below
+map('n', '<c-k>', '<c-w>k')                 -- focus window above
+map('n', '<c-l>', '<c-w>l')                 -- focus window to the right
+map('n', '<c-c>', '<c-w>c')                 -- close current window
 
 --[[ Miscellaneous ]]
-map('n', '<A-w>', [[:set wrap!]])    -- Toggle word wrap
+map('n', '<a-w>', [[:set wrap!]])           -- toggle word wrap
+map('n', '<Leader>h', [[:noh<CR>]])         -- Clear search highlight
+map('n', '<Leader>Q', [[:%s/"/'/g<CR>]])    -- Replace all double quotes
+map('n', '<Leader>I', 'gg=G')               -- Reindent file
