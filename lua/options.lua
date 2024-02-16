@@ -6,8 +6,6 @@ local g = vim.g
 cmd('filetype plugin on')            -- Enable filetype plugin
 g.mapleader = ' '                    -- Set global <Leader> key
 g.localleader = '\\'                 -- Set local <Leader> key
-g.t_co = 256                         -- Enable 256-color support
-g.background = 'dark'                -- Enforce terminal background
 opt.smartcase = true                 -- Use smartcase search
 
 --[[ Context ]]

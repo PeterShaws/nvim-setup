@@ -22,3 +22,5 @@ map('n', '<a-w>', [[:set wrap!]])           -- toggle word wrap
 map('n', '<Leader>h', [[:noh<CR>]])         -- Clear search highlight
 map('n', '<Leader>Q', [[:%s/"/'/g<CR>]])    -- Replace all double quotes
 map('n', '<Leader>I', 'gg=G')               -- Reindent file
+map('n', '<Leader>a', [[:Alpha<CR>]])    -- Invoke dashboard panel
+map('n', '<F5>', [[:luafile %<CR>]])     -- Source current lua file

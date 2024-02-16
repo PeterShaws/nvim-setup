@@ -31,7 +31,6 @@ return {
         map('n', '<A-p>', [[:BufferLinePick<CR>]], {})
         map('n', '<A-h>', [[:BufferLineCyclePrev<CR>]], {})
         map('n', '<A-l>', [[:BufferLineCycleNext<CR>]], {})
-        map('n', '<A-c>', [[:bdelete<CR>]], {})
         map('n', '<A-O>', [[:BufferLineCloseOthers<CR>]], {})
         map('n', '<A-L>', [[:BufferLineCloseLeft<CR>]], {})
         map('n', '<A-R>', [[:BufferLineCloseRight<CR>]], {})

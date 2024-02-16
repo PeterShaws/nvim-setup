@@ -4,7 +4,7 @@ return {
     opts = {
         options = {
             theme = 'iceberg',
-            component_separators = '⁞',
+            component_separators = '',
             section_separators = '',
             disabled_filetypes = {
                 statusline = { 'neo-tree' },
