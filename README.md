@@ -9,7 +9,7 @@ clearly superior.
     ```bash
     git clone https://github.com/PeterShaws/nvim-setup.git ~/.config/nvim
     ```
-2. `cd` into `config`
+2. `cd` into `~/.config/nvim`
 3. Launch NeoVim
 4. Wait for Lazy's UI to appear, then quit NeoVim
 5. Launch NeoVim again and wait for Lazy to sync all plugins
