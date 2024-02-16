@@ -1,6 +1,6 @@
-local function map(mode, lhs, rhs, opts)
-    opts = opts or {}
-    vim.api.nvim_set_keymap(mode, lhs, rhs, opts)
+local function map(mode, keys, target, options)
+    options = options or {}
+    vim.api.nvim_set_keymap(mode, keys, target, options)
 end
 
 --[[ Insert mode convenience ]]
@@ -19,6 +19,7 @@ map('n', '<C-c>', '<C-w>c') -- close current window
 
 --[[ Miscellaneous ]]
 map('n', '<Leader>a', [[:Alpha<CR>]])    -- Invoke dashboard panel
+map('n', '<Leader>cd', [[:cd %:h<CR>]])  -- Change to the current file's directory
 map('n', '<Leader>qq', [[:qa!<CR>]])     -- Quit NeoVim without saving anything
 map('n', '<Leader>qw', [[:wqa<CR>]])     -- Quit NeoVim, saving everything
 map('n', '<F5>', [[:luafile %<CR>]])     -- Source current lua file
