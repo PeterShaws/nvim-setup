@@ -58,12 +58,18 @@ return {
                     ['<C-e>'] = cmp.mapping.abort(),
                     ['<CR>'] = cmp.mapping.confirm({ select = true }),
                 }),
-                sources = cmp.config.sources({
-                    { name = 'nvim_lsp' },
-                    { name = 'luasnip' },
-                }, {
-                    { name = 'buffer' },
-                }),
+                sources = {
+                    { name = 'path' },
+                    { name = 'nvim_lsp', keyword_length = 1 },
+                    { name = 'buffer',   keyword_length = 3 },
+                    { name = 'luasnip',  keyword_length = 2 },
+                },
+                -- sources = cmp.config.sources({
+                --     { name = 'nvim_lsp' },
+                --     { name = 'luasnip' },
+                -- }, {
+                --     { name = 'buffer' },
+                -- }),
                 formatting = {
                     format = function(entry, vim_item)
                         vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
