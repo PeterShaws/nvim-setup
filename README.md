@@ -6,9 +6,11 @@ clearly superior.
 ## Usage
 
 1. Clone this repository:
-    ```bash
-    git clone https://github.com/PeterShaws/nvim-setup.git ~/.config/nvim
-    ```
+
+   ```bash
+   git clone https://github.com/PeterShaws/nvim-setup.git ~/.config/nvim
+   ```
+
 2. `cd` into `~/.config/nvim`
 3. Launch NeoVim
 4. Wait for Lazy's UI to appear, then quit NeoVim
