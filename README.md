@@ -12,7 +12,11 @@ clearly superior.
    ```
 
 2. `cd` into `~/.config/nvim`
-3. Launch NeoVim
-4. Wait for Lazy's UI to appear, then quit NeoVim
-5. Launch NeoVim again and wait for Lazy to sync all plugins
-6. Relaunch NeoVim and hope for the best
+3. Launch NeoVim and wait for Lazy's UI to appear, then wait for it to sync all
+plugins
+6. You should be good to go; if not, relaunch NeoVim
+
+## Dependencies
+
+1. `nodejs`/`npm`
+2. `lazygit`
