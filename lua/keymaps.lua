@@ -4,7 +4,6 @@ local function map(mode, keys, target, options)
 end
 
 --[[ Insert mode convenience ]]
-map('i', 'jk', '<esc>')      -- exit insert mode
 map('i', '<A-h>', '<left>')  -- move cursor left
 map('i', '<A-j>', '<down>')  -- move cursor down
 map('i', '<A-k>', '<up>')    -- move cursor up
