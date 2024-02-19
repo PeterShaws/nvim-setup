@@ -72,21 +72,22 @@ return {
 
                     -- Buffer local mappings.
                     -- See `:help vim.lsp.*` for documentation on any of the below functions
-                    local opts = { buffer = ev.buf }
+                    local buf = vim.lsp.buf
+                    local opts = table.unpack({ buffer = ev.buf })
                     local map = vim.keymap.set
-                    map('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration', table.unpack(opts) })
-                    map('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition', table.unpack(opts) })
-                    map('n', 'K', vim.lsp.buf.hover, { desc = 'Hover', table.unpack(opts) })
-                    map('n', 'gi', vim.lsp.buf.implementation, { desc = 'Go to implementation', table.unpack(opts) })
-                    map('n', '<C-k>', vim.lsp.buf.signature_help, { desc = 'Show signature', table.unpack(opts) })
-                    map('n', '<Leader>wf', vim.lsp.buf.add_workspace_folder, { desc = 'Add workspace folder', table.unpack(opts) })
-                    map('n', '<Leader>wr', vim.lsp.buf.remove_workspace_folder, { desc = 'Remove workspace folder', table.unpack(opts) })
-                    map('n', '<Leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, { desc = 'List workspace folders', table.unpack(opts) })
-                    map('n', '<Leader>D', vim.lsp.buf.type_definition, { desc = 'Go to type definition', table.unpack(opts) })
-                    map('n', '<Leader>rn', vim.lsp.buf.rename, { desc = 'Rename', table.unpack(opts) })
-                    map({ 'n', 'v' }, '<Leader>ca', vim.lsp.buf.code_action, { desc = 'Code actions', table.unpack(opts) })
-                    map('n', 'gr', vim.lsp.buf.references, { desc = 'List references', table.unpack(opts) })
-                    map('n', '<Leader>f', function() vim.lsp.buf.format({ async = true }) end, { desc = 'Format', table.unpack(opts) })
+                    map('n', 'gD', buf.declaration, { desc = 'Go to declaration', opts })
+                    map('n', 'gd', buf.definition, { desc = 'Go to definition', opts })
+                    map('n', 'K', buf.hover, { desc = 'Hover', opts })
+                    map('n', 'gi', buf.implementation, { desc = 'Go to implementation', opts })
+                    map('n', '<C-k>', buf.signature_help, { desc = 'Show signature', opts })
+                    map('n', '<Leader>wf', buf.add_workspace_folder, { desc = 'Add workspace folder', opts })
+                    map('n', '<Leader>wr', buf.remove_workspace_folder, { desc = 'Remove workspace folder', opts })
+                    map('n', '<Leader>wl', function() print(vim.inspect(buf.list_workspace_folders())) end, { desc = 'List workspace folders', opts })
+                    map('n', '<Leader>D', buf.type_definition, { desc = 'Go to type definition', opts })
+                    map('n', '<Leader>rn', buf.rename, { desc = 'Rename', opts })
+                    map({ 'n', 'v' }, '<Leader>ca', buf.code_action, { desc = 'Code actions', opts })
+                    map('n', 'gr', buf.references, { desc = 'List references', opts })
+                    map('n', '<Leader>f', function() buf.format({ async = true }) end, { desc = 'Format', opts })
 
                     highlight_symbol(ev)
                 end,
