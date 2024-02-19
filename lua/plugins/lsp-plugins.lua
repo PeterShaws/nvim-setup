@@ -47,6 +47,7 @@ return {
             -- Setup language servers.
             local lspconfig = require('lspconfig')
             local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+
             lspconfig.lua_ls.setup({ capabilities = lsp_capabilities })
             lspconfig.bashls.setup({ capabilities = lsp_capabilities })
             lspconfig.pyright.setup({ capabilities = lsp_capabilities })
@@ -100,23 +101,25 @@ return {
                 vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
             end
 
+            -- Diagnostics
+            vim.diagnostic.config({
+                virtual_text = true,
+                signs = true,
+                update_in_insert = false,
+                underline = true,
+                severity_sort = false,
+                float = { border = 'rounded', source = 'always' },
+            })
+
             -- Float borders
-            local border = {
-                { '╭', 'FloatBorder' }, -- '🭽' -- upper-left line
-                { '─', 'FloatBorder' }, -- '▔' -- top line
-                { '╮', 'FloatBorder' }, -- '🭾' -- upper-right line
-                { '│', 'FloatBorder' }, -- '▕' -- right line
-                { '╯', 'FloatBorder' }, -- '🭿' -- bottom-right line
-                { '─', 'FloatBorder' }, -- '▁' -- bottom line
-                { '╰', 'FloatBorder' }, -- '🭼' -- bottom-left line
-                { '│', 'FloatBorder' }, -- '▏' -- left line
-            }
-            local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-            function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-                opts = opts or {}
-                opts.border = opts.border or border
-                return orig_util_open_floating_preview(contents, syntax, opts, ...)
-            end
+            vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+                vim.lsp.handlers.hover,
+                { border = 'rounded' }
+            )
+            vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+                vim.lsp.handlers.signature_help,
+                { border = 'rounded' }
+            )
         end,
     },
 }
