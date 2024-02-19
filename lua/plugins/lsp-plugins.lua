@@ -79,7 +79,7 @@ return {
                     map('n', 'K', vim.lsp.buf.hover, { desc = 'Hover', table.unpack(opts) })
                     map('n', 'gi', vim.lsp.buf.implementation, { desc = 'Go to implementation', table.unpack(opts) })
                     map('n', '<C-k>', vim.lsp.buf.signature_help, { desc = 'Show signature', table.unpack(opts) })
-                    map('n', '<Leader>wa', vim.lsp.buf.add_workspace_folder, { desc = 'Add workspace folder', table.unpack(opts) })
+                    map('n', '<Leader>wf', vim.lsp.buf.add_workspace_folder, { desc = 'Add workspace folder', table.unpack(opts) })
                     map('n', '<Leader>wr', vim.lsp.buf.remove_workspace_folder, { desc = 'Remove workspace folder', table.unpack(opts) })
                     map('n', '<Leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, { desc = 'List workspace folders', table.unpack(opts) })
                     map('n', '<Leader>D', vim.lsp.buf.type_definition, { desc = 'Go to type definition', table.unpack(opts) })
@@ -120,4 +120,5 @@ return {
             )
         end,
     },
+    { 'folke/lsp-colors.nvim' },
 }
