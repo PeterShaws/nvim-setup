@@ -21,9 +21,9 @@ opt.encoding = 'utf8'     -- String encoding to use
 opt.fileencoding = 'utf8' -- File encoding to use
 
 --[[ Theme ]]
-opt.syntax = 'ON'        -- Allow syntax highlighting
-opt.termguicolors = true -- If term supports ui color then enable
-opt.fillchars = 'stl: '  -- Hide current status line fill char
+opt.syntax = 'ON'              -- Allow syntax highlighting
+opt.termguicolors = true       -- If term supports ui color then enable
+opt.fillchars = 'stl: ,fold: ' -- Hide current status line, fold fill chars
 
 --[[ Whitespace ]]
 opt.expandtab = true -- Use spaces instead of tabs
