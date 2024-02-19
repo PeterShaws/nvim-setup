@@ -17,6 +17,6 @@ return {
             }
         })
 
-        vim.keymap.set('n', '<F2>', [[:Neotree filesystem reveal left<CR>]], {})
+        vim.keymap.set('n', '<F2>', [[:Neotree filesystem reveal left<CR>]], { desc = 'File explorer' })
     end,
 }

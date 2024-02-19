@@ -56,10 +56,11 @@ return {
 
             -- Global mappings.
             -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-            vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float)
-            vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-            vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-            vim.keymap.set('n', '<Leader>q', vim.diagnostic.setloclist)
+            vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
+            vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
+            vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
+            vim.keymap.set('n', '<Leader>q', vim.diagnostic.setloclist,
+                { desc = 'Add buffer diagnostics to the location list' })
 
             -- Use LspAttach autocommand to only map the following keys
             -- after the language server attaches to the current buffer
@@ -72,23 +73,20 @@ return {
                     -- Buffer local mappings.
                     -- See `:help vim.lsp.*` for documentation on any of the below functions
                     local opts = { buffer = ev.buf }
-                    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-                    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-                    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-                    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-                    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-                    vim.keymap.set('n', '<Leader>wa', vim.lsp.buf.add_workspace_folder, opts)
-                    vim.keymap.set('n', '<Leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
-                    vim.keymap.set('n', '<Leader>wl', function()
-                        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-                    end, opts)
-                    vim.keymap.set('n', '<Leader>D', vim.lsp.buf.type_definition, opts)
-                    vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, opts)
-                    vim.keymap.set({ 'n', 'v' }, '<Leader>ca', vim.lsp.buf.code_action, opts)
-                    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-                    vim.keymap.set('n', '<Leader>f', function()
-                        vim.lsp.buf.format({ async = true })
-                    end, opts)
+                    local map = vim.keymap.set
+                    map('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration', table.unpack(opts) })
+                    map('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition', table.unpack(opts) })
+                    map('n', 'K', vim.lsp.buf.hover, { desc = 'Hover', table.unpack(opts) })
+                    map('n', 'gi', vim.lsp.buf.implementation, { desc = 'Go to implementation', table.unpack(opts) })
+                    map('n', '<C-k>', vim.lsp.buf.signature_help, { desc = 'Show signature', table.unpack(opts) })
+                    map('n', '<Leader>wa', vim.lsp.buf.add_workspace_folder, { desc = 'Add workspace folder', table.unpack(opts) })
+                    map('n', '<Leader>wr', vim.lsp.buf.remove_workspace_folder, { desc = 'Remove workspace folder', table.unpack(opts) })
+                    map('n', '<Leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, { desc = 'List workspace folders', table.unpack(opts) })
+                    map('n', '<Leader>D', vim.lsp.buf.type_definition, { desc = 'Go to type definition', table.unpack(opts) })
+                    map('n', '<Leader>rn', vim.lsp.buf.rename, { desc = 'Rename', table.unpack(opts) })
+                    map({ 'n', 'v' }, '<Leader>ca', vim.lsp.buf.code_action, { desc = 'Code actions', table.unpack(opts) })
+                    map('n', 'gr', vim.lsp.buf.references, { desc = 'List references', table.unpack(opts) })
+                    map('n', '<Leader>f', function() vim.lsp.buf.format({ async = true }) end, { desc = 'Format', table.unpack(opts) })
 
                     highlight_symbol(ev)
                 end,
@@ -101,7 +99,7 @@ return {
                 vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
             end
 
-            -- Diagnostics
+            -- Diagnostics display
             vim.diagnostic.config({
                 virtual_text = true,
                 signs = true,
