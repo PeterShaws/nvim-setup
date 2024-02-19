@@ -33,5 +33,9 @@ return {
                 },
             },
         })
+
+        vim.opt.foldmethod = 'expr'                     -- Define code folding method
+        vim.opt.foldexpr = 'nvim_treesitter#foldexpr()' -- Use Tree-Sitter for code folding
+        vim.opt.foldenable = false                      -- Don't fold code by default
     end,
 }

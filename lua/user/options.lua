@@ -31,9 +31,6 @@ opt.shiftwidth = 4   -- Size of an indent
 opt.softtabstop = 4  -- Number of spaces tabs add in insert mode
 opt.tabstop = 4      -- Number of spaces tabs count for
 
---[[ Code ]]
-opt.foldenable = false -- Don't fold code by default
-
 --[[ Splits ]]
 opt.splitright = true -- Place new window to the right of current one
 opt.splitbelow = true -- Place new window below the current one
