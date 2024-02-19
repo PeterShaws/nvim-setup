@@ -5,5 +5,15 @@ return {
         vim.o.timeout = true
         vim.o.timeoutlen = 200
     end,
-    opts = {}
+    opts = {
+        icons = {
+            breadcrumb = '',
+            separator = '·',
+            group = ' ',
+        },
+    },
+    window = {
+        border = 'single',
+        winblend = 50,
+    },
 }
