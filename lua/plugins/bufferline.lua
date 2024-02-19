@@ -15,6 +15,9 @@ return {
                             text_align = 'center',
                         },
                     },
+                    indicator = {
+                        style = 'none'
+                    },
                 },
             })
 
