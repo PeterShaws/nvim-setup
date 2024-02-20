@@ -15,9 +15,8 @@ return {
                             text_align = 'center',
                         },
                     },
-                    indicator = {
-                        style = 'none'
-                    },
+                    indicator = { style = 'none' },
+                    diagnostics = 'nvim_lsp',
                 },
             })
 
