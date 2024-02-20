@@ -9,11 +9,13 @@ return {
         icons = {
             breadcrumb = '',
             separator = '·',
-            group = ' ',
+            group = ' ',
         },
-    },
-    window = {
-        border = 'single',
-        winblend = 50,
+        window = {
+            border = 'rounded',
+            position = 'top',
+            winblend = 10,
+            zindex = 1000,
+        },
     },
 }
