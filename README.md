@@ -1,4 +1,4 @@
-# My _ongoing_ NeoVim Setup 2.0
+# My _ongoing_ Neovim Setup 2.0
 
 This time using Lazy instead of Packer, because the modularized plugin setup is
 clearly superior.
@@ -12,9 +12,9 @@ clearly superior.
    ```
 
 2. `cd` into `~/.config/nvim`
-3. Launch NeoVim and wait for Lazy's UI to appear, then wait for it to sync all
+3. Launch Neovim and wait for Lazy's UI to appear, then wait for it to sync all
 plugins
-4. You should be good to go; if not, relaunch NeoVim
+4. You should be good to go; if not, relaunch Neovim
 
 ## Dependencies
 

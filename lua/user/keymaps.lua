@@ -21,8 +21,8 @@ map('n', '<Leader>cd', [[:cd %:h<CR>]], 'Change to the current buffer’s direct
 map('n', '<Leader>ww', [[:write<CR>]], 'Write the current buffer')
 map('n', '<Leader>wa', [[:wall<CR>]], 'Write all open buffers')
 map('n', '<Leader>qa', [[:%bdelete!|Alpha|bdelete#|Neotree close<CR>]], 'Close all open buffers')
-map('n', '<Leader>qq', [[:qa!<CR>]], 'Quit NeoVim without writing anything')
-map('n', '<Leader>qw', [[:wqa<CR>]], 'Quit NeoVim, writing everything')
+map('n', '<Leader>qq', [[:qa!<CR>]], 'Quit Neovim without writing anything')
+map('n', '<Leader>qw', [[:wqa<CR>]], 'Quit Neovim, writing everything')
 map('n', '<F5>', [[:echo "Lua file sourced."|luafile %<CR>]], 'Source current lua file')
 
 --[[ Text ]]
