@@ -27,16 +27,15 @@ local kind_icons = {
 }
 
 return {
-    { 'hrsh7th/cmp-nvim-lsp' },
-    {
-        'L3MON4D3/LuaSnip',
-        dependencies = {
-            'saadparwaiz1/cmp_luasnip',
-            'rafamadriz/friendly-snippets',
-        },
-    },
     {
         'hrsh7th/nvim-cmp',
+        dependencies = {
+            'L3MON4D3/LuaSnip',
+            'saadparwaiz1/cmp_luasnip',
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-path',
+            'rafamadriz/friendly-snippets',
+        },
         config = function()
             require('luasnip.loaders.from_vscode').lazy_load()
 

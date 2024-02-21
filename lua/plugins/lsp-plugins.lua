@@ -42,7 +42,7 @@ return {
         },
     },
     { 'williamboman/mason-lspconfig.nvim', opts = {} },
-    { 'folke/neodev.nvim', opts = {} },
+    { 'folke/neodev.nvim',                 opts = {} },
     {
         'neovim/nvim-lspconfig',
         config = function()
