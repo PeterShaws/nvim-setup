@@ -37,10 +37,8 @@ return {
             },
         },
     },
-    {
-        'williamboman/mason-lspconfig.nvim',
-        opts = {},
-    },
+    { 'williamboman/mason-lspconfig.nvim', opts = {} },
+    { 'folke/neodev.nvim', opts = {} },
     {
         'neovim/nvim-lspconfig',
         config = function()
@@ -56,6 +54,9 @@ return {
                 capabilities = lsp_capabilities,
                 settings = {
                     Lua = {
+                        completion = {
+                            callSnippet = 'Replace',
+                        },
                         diagnostics = {
                             globals = { 'vim' },
                         },
