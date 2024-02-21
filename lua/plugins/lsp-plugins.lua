@@ -48,11 +48,26 @@ return {
             local lspconfig = require('lspconfig')
             local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-            lspconfig.lua_ls.setup({ capabilities = lsp_capabilities })
             lspconfig.bashls.setup({ capabilities = lsp_capabilities })
             lspconfig.pyright.setup({ capabilities = lsp_capabilities })
             lspconfig.jsonls.setup({ capabilities = lsp_capabilities })
             lspconfig.tsserver.setup({ capabilities = lsp_capabilities })
+            lspconfig.lua_ls.setup({
+                capabilities = lsp_capabilities,
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = { 'vim' },
+                        },
+                        workspace = {
+                            library = vim.api.nvim_get_runtime_file('', true),
+                        },
+                        telemetry = {
+                            enable = false,
+                        },
+                    },
+                },
+            })
 
             -- Global mappings.
             -- See `:help vim.diagnostic.*` for documentation on any of the below functions

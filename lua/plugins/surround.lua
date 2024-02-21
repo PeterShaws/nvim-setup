@@ -14,7 +14,7 @@ return {
         map('n', 'gzd', '<Plug>Dsurround', 'Get Surround Deleted')           -- ds
         map('n', 'gzz', '<Plug>Ysurround', 'Get String Surround')            -- yss
         map('n', 'gZZ', '<Plug>YSurround', 'Get Indented String Surround')   -- ySs
-        map('x', 'gz', '<Plug>VgSurround', 'Visual Surround')                -- gS
-        map('x', 'gZ', '<Plug>VSurround', 'Visual Indented Surround')        -- S
+        map('x', 'gz', '<Plug>VSurround', 'Visual Surround')                 -- S
+        map('x', 'gZ', '<Plug>VgSurround', 'Visual Indented Surround')       -- gS
     end
 }
