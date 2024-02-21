@@ -1,3 +1,7 @@
+local map = function(keys, handler, desc)
+    vim.keymap.set('n', keys, handler, { desc = desc })
+end
+
 return {
     {
         'nvim-telescope/telescope.nvim',
@@ -10,16 +14,25 @@ return {
                     selection_caret = ' ',
                     entry_prefix = '  ',
                     multi_icon = ' ',
+                    winblend = 10,
                 },
             })
             local builtin = require('telescope.builtin')
-            vim.keymap.set('n', '<Leader>ff', builtin.find_files, { desc = 'Find files' })
-            vim.keymap.set('n', '<Leader>fg', builtin.live_grep, { desc = 'Live grep' })
-            vim.keymap.set('n', '<Leader>fb', builtin.buffers, { desc = 'List open buffers' })
-            vim.keymap.set('n', '<Leader>fh', builtin.help_tags, { desc = 'List help tags' })
-            vim.keymap.set('n', '<Leader>fc', builtin.colorscheme, { desc = 'Switch colorscheme' })
-            vim.keymap.set('n', '<Leader>ft', builtin.treesitter, { desc = 'List symbols' })
-            vim.keymap.set('n', '<Leader>fd', builtin.diagnostics, { desc = 'List diagnostics' })
+            map('<Leader>ff', builtin.find_files, 'Find files')
+            map('<Leader>fg', builtin.live_grep, 'Live grep')
+            map('<Leader>fb', builtin.buffers, 'Open buffers')
+            map('<Leader>fh', builtin.help_tags, 'Help tags')
+            map('<Leader>fk', builtin.keymaps, 'Key maps')
+            map('<Leader>fc', builtin.colorscheme, 'Switch colorscheme')
+            map('<Leader>ft', builtin.treesitter, 'Treesitter symbols')
+            map('<Leader>fs', builtin.lsp_document_symbols, 'Document symbols')
+            map('<Leader>fw', builtin.lsp_dynamic_workspace_symbols, 'Workspace symbols')
+            map('<Leader>fd', builtin.diagnostics, 'Diagnostics')
+            map('<Leader>f/', function()
+                builtin.current_buffer_fuzzy_find(
+                    require('telescope.themes').get_dropdown({ previewer = false })
+                )
+            end, 'Search current buffer')
         end,
     },
     {

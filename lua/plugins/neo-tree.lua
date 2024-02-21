@@ -1,3 +1,7 @@
+local map = function(keys, command, desc)
+    vim.keymap.set('n', keys, command, { desc = desc })
+end
+
 return {
     'nvim-neo-tree/neo-tree.nvim',
     branch = 'v3.x',
@@ -18,8 +22,8 @@ return {
             }
         })
 
-        vim.keymap.set('n', '<F2>', [[:Neotree filesystem reveal left<CR>]], { desc = 'File explorer' })
-        vim.keymap.set('n', '<S-F2>', [[:Neotree close<CR>]], { desc = 'Close file explorer' })
+        map('<F2>', [[:Neotree filesystem reveal left<CR>]], 'File explorer')
+        map('<S-F2>', [[:Neotree close<CR>]], 'Close file explorer')
         vim.api.nvim_create_user_command('CloseNeotree', [[:Neotree close<CR>]], {})
     end,
 }
