@@ -36,6 +36,6 @@ return {
             }
         })
         require('telescope').load_extension('noice')
-        vim.keymap.set('n', '<Leader>fm', [[:Telescope noice<CR>]], { desc = 'List messages' })
+        vim.keymap.set('n', '<Leader>fm', [[:Telescope noice<CR>]], { desc = 'Messages' })
     end,
 }
