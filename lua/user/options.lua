@@ -15,15 +15,17 @@ opt.number = true         -- Show line numbers
 opt.relativenumber = true -- Show relative line numbers
 opt.scrolloff = 4         -- Min num lines of context
 opt.signcolumn = 'yes'    -- Show the sign column
+opt.cursorline = true     -- Highlight the current line
 
 --[[ Filetypes ]]
 opt.encoding = 'utf8'     -- String encoding to use
 opt.fileencoding = 'utf8' -- File encoding to use
 
 --[[ Theme ]]
+---@diagnostic disable-next-line: assign-type-mismatch
+opt.fillchars = 'stl: ,fold: ' -- Hide current status line, fold fill chars
 opt.syntax = 'ON'              -- Allow syntax highlighting
 opt.termguicolors = true       -- If term supports ui color then enable
-opt.fillchars = 'stl: ,fold: ' -- Hide current status line, fold fill chars
 
 --[[ Whitespace ]]
 opt.expandtab = true -- Use spaces instead of tabs
