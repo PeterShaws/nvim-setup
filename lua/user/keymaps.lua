@@ -1,36 +1,40 @@
-local function map(mode, keys, command, options)
-    options = options or {}
-    vim.keymap.set(mode, keys, command, options)
+local function map(mode, lhs, rhs, desc)
+    local opts = { desc = desc }
+    vim.keymap.set(mode, lhs, rhs, opts)
 end
 
 --[[ Insert mode navigation ]]
-map('i', '<A-h>', '<Left>', { desc = 'Move cursor left' })
-map('i', '<A-j>', '<Down>', { desc = 'Move cursor down' })
-map('i', '<A-k>', '<Up>', { desc = 'Move cursor up' })
-map('i', '<A-l>', '<Right>', { desc = 'Move cursor right' })
+map('i', '<A-h>', '<Left>', 'Move cursor left')
+map('i', '<A-j>', '<Down>', 'Move cursor down')
+map('i', '<A-k>', '<Up>', 'Move cursor up')
+map('i', '<A-l>', '<Right>', 'Move cursor right')
 
 --[[ Window navigation ]]
-map('n', '<C-h>', '<C-w>h', { desc = 'Focus window to the left' })
-map('n', '<C-j>', '<C-w>j', { desc = 'Focus window below' })
-map('n', '<C-k>', '<C-w>k', { desc = 'Focus window above' })
-map('n', '<C-l>', '<C-w>l', { desc = 'Focus window to the right' })
-map('n', '<C-c>', '<C-w>c', { desc = 'Close current window' })
+map('n', '<C-h>', '<C-w>h', 'Focus window to the left')
+map('n', '<C-j>', '<C-w>j', 'Focus window below')
+map('n', '<C-k>', '<C-w>k', 'Focus window above')
+map('n', '<C-l>', '<C-w>l', 'Focus window to the right')
+map('n', '<C-c>', '<C-w>c', 'Close current window')
 
---[[ Miscellaneous ]]
-map('n', '<Leader>cd', [[:cd %:h<CR>]], { desc = 'Change to the current file’s directory' })
-map('n', '<Leader>A', [[:keepjumps normal! ggVG<CR>]], { desc = 'Select all text' })
-map({ 'n', 'x' }, 'gy', '"+y', { desc = 'Copy to clipboard' })
-map({ 'n', 'x' }, 'gp', '"+p', { desc = 'Paste from clipboard' })
-map('n', '<Leader>ww', [[:write<CR>]], { desc = 'Write the current buffer' })
-map('n', '<Leader>wa', [[:wall<CR>]], { desc = 'Write all open buffers' })
-map('n', '<Leader>qa', [[:%bdelete!|Alpha|bdelete#|Neotree close<CR>]], { desc = 'Close all open buffers' })
-map('n', '<Leader>qq', [[:qa!<CR>]], { desc = 'Quit NeoVim without writing anything' })
-map('n', '<Leader>qw', [[:wqa<CR>]], { desc = 'Quit NeoVim, writing everything' })
-map('n', '<F5>', [[:echo "Lua file sourced."|luafile %<CR>]], { desc = 'Source current lua file' })
-map('n', '<A-w>', [[:set wrap!<CR>]], { desc = 'Toggle word wrap' })
-map('n', '<Esc>', [[:noh<CR>]], { desc = 'Clear search highlight' })
-map('n', '<Leader>Q', [[:%s/"/'/g<CR>]], { desc = 'Replace all double quotes' })
-map('n', '<Leader>I', 'gg=G', { desc = 'Reindent file' })
+--[[ Files/Buffers ]]
+map('n', '<Leader>cd', [[:cd %:h<CR>]], 'Change to the current buffer’s directory')
+map('n', '<Leader>ww', [[:write<CR>]], 'Write the current buffer')
+map('n', '<Leader>wa', [[:wall<CR>]], 'Write all open buffers')
+map('n', '<Leader>qa', [[:%bdelete!|Alpha|bdelete#|Neotree close<CR>]], 'Close all open buffers')
+map('n', '<Leader>qq', [[:qa!<CR>]], 'Quit NeoVim without writing anything')
+map('n', '<Leader>qw', [[:wqa<CR>]], 'Quit NeoVim, writing everything')
+map('n', '<F5>', [[:echo "Lua file sourced."|luafile %<CR>]], 'Source current lua file')
+
+--[[ Text ]]
+map('n', '<Leader>A', [[:keepjumps normal! ggVG<CR>]], 'Select all text')
+map({ 'n', 'x' }, 'gy', '"+y', 'Copy to clipboard')
+map({ 'n', 'x' }, 'gp', '"+p', 'Paste from clipboard')
+map({ 'n', 'x' }, 'x', '"_x', 'Delete')
+map({ 'n', 'x' }, 'X', '"_d', 'Delete')
+map('n', '<A-w>', [[:set wrap!<CR>]], 'Toggle word wrap')
+map('n', '<Leader>Q', [[:%s/"/'/g<CR>]], 'Replace all double quotes')
+map('n', '<Leader>I', 'gg=G', 'Reindent file')
+map('n', '<Esc>', [[:noh<CR>]], 'Clear search highlight')
 
 --[[ Autocommands ]]
 local augroup = vim.api.nvim_create_augroup('user_cmds', { clear = true })
