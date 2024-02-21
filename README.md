@@ -14,7 +14,7 @@ clearly superior.
 2. `cd` into `~/.config/nvim`
 3. Launch NeoVim and wait for Lazy's UI to appear, then wait for it to sync all
 plugins
-6. You should be good to go; if not, relaunch NeoVim
+4. You should be good to go; if not, relaunch NeoVim
 
 ## Dependencies
 
