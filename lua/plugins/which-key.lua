@@ -4,7 +4,8 @@ return {
     init = function()
         vim.o.timeout = true
         vim.o.timeoutlen = 200
-        require('which-key').register({
+        local which_key = require('which-key')
+        which_key.register({
             ['<Leader>b'] = { name = 'Buffer', _ = 'which_key_ignore' },
             ['<Leader>c'] = { name = 'Change', _ = 'which_key_ignore' },
             ['<Leader>f'] = { name = 'Find', _ = 'which_key_ignore' },
@@ -17,6 +18,13 @@ return {
             ['['] = { name = 'Previous', _ = 'which_key_ignore' },
             [']'] = { name = 'Next', _ = 'which_key_ignore' },
         })
+        which_key.register({
+            ['<Leader>c'] = { name = 'Code Actions', _ = 'which_key_ignore' },
+            ['<Leader>h'] = { name = 'Git Hunk', _ = 'which_key_ignore' },
+            ['['] = { name = 'Previous', _ = 'which_key_ignore' },
+            [']'] = { name = 'Next', _ = 'which_key_ignore' },
+            ['i'] = { name = 'inside', _ = 'which_key_ignore' },
+        }, { mode = 'v' })
     end,
     opts = {
         icons = {
