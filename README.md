@@ -22,6 +22,7 @@ plugins
 
 - [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 - [famiu/bufdelete.nvim](https://github.com/famiu/bufdelete.nvim)
+- [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - [folke/lsp-colors.nvim](https://github.com/folke/lsp-colors.nvim)
 - [folke/neodev.nvim](https://github.com/folke/neodev.nvim)
 - [folke/noice.nvim](https://github.com/folke/noice.nvim)
