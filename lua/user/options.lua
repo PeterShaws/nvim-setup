@@ -1,11 +1,8 @@
 local cmd = vim.api.nvim_command
 local opt = vim.opt
-local g = vim.g
 
 --[[ Basics ]]
 cmd('filetype plugin on') -- Enable filetype plugin
-g.mapleader = ' '         -- Set global <Leader> key
-g.localleader = '\\'      -- Set local <Leader> key
 opt.smartcase = true      -- Use smartcase search
 opt.showmode = false      -- Disable mode display in command line
 
@@ -32,6 +29,6 @@ opt.shiftwidth = 4   -- Size of an indent
 opt.softtabstop = 4  -- Number of spaces tabs add in insert mode
 opt.tabstop = 4      -- Number of spaces tabs count for
 
---[[ Splits ]]
+--[[ Windows ]]
 opt.splitright = true -- Place new window to the right of current one
 opt.splitbelow = true -- Place new window below the current one

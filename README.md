@@ -17,6 +17,17 @@
 
 1. `nodejs`/`npm`
 2. `lazygit`
+    - `ydiff` (optional, a pager that can show diffs side-by-side). Configured
+      like so:
+
+      ```yaml
+      gui:
+        sidePanelWidth: 0.2
+      git:
+        paging:
+          colorArg: never
+          pager: ydiff -p cat -s --wrap --width={{columnWidth}}
+      ```
 
 ## Keymaps
 

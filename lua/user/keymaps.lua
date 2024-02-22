@@ -2,6 +2,10 @@ local function map(mode, keys, command, desc)
     vim.keymap.set(mode, keys, command, { desc = desc })
 end
 
+--[[ Leaders ]]
+vim.g.mapleader = ' '    -- Set global <Leader> key
+vim.g.localleader = '\\' -- Set local <Leader> key
+
 --[[ Insert mode navigation ]]
 map('i', '<A-h>', [[<Left>]], 'Move cursor left')
 map('i', '<A-j>', [[<Down>]], 'Move cursor down')
@@ -27,7 +31,8 @@ map('n', '<F5>', [[:echo "Lua file sourced."|luafile %<CR>]], 'Source current lu
 --[[ Text ]]
 map('n', '<Leader>A', [[:keepjumps normal! ggVG<CR>]], 'Select all text')
 map({ 'n', 'x' }, 'gy', [["+y]], 'Copy to clipboard')
-map({ 'n', 'x' }, 'gp', [["+p]], 'Paste from clipboard')
+map({ 'n', 'x' }, 'gp', [["+p]], 'Paste from clipboard (after cursor)')
+map({ 'n', 'x' }, 'gP', [["+P]], 'Paste from clipboard (before cursor)')
 map('t', '<C-S-C>', [["+y]], 'Copy from terminal into clipboard')
 map('t', '<C-S-V>', [["+p]], 'Paste from clipboard into terminal')
 map({ 'n', 'x' }, 'x', [["_x]], 'Delete')
