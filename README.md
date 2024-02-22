@@ -10,13 +10,27 @@
 
 2. `cd` into `~/.config/nvim`
 3. Launch Neovim and wait for Lazy's UI to appear, then wait for it to sync all
-plugins
+   plugins
 4. You should be good to go; if not, relaunch Neovim
 
 ## Dependencies
 
 1. `nodejs`/`npm`
 2. `lazygit`
+
+## Optional
+
+Use [Neovide](https://neovide.dev) as a GUI for Neovim. Example configuration:
+
+`~/.config/neovide/config.toml`
+
+```toml
+[font]
+normal = { "family" = "JetBrainsMono Nerd Font", "style" = "ExtraLight" }
+size = 16
+hinting = "none"
+edging = "subpixelantialias"
+```
 
 ## Plugins used
 
