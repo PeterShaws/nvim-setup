@@ -28,6 +28,8 @@ map('n', '<F5>', [[:echo "Lua file sourced."|luafile %<CR>]], 'Source current lu
 map('n', '<Leader>A', [[:keepjumps normal! ggVG<CR>]], 'Select all text')
 map({ 'n', 'x' }, 'gy', [["+y]], 'Copy to clipboard')
 map({ 'n', 'x' }, 'gp', [["+p]], 'Paste from clipboard')
+map('t', '<C-S-C>', [["+y]], 'Copy from terminal into clipboard')
+map('t', '<C-S-V>', [["+p]], 'Paste from clipboard into terminal')
 map({ 'n', 'x' }, 'x', [["_x]], 'Delete')
 map({ 'n', 'x' }, 'X', [["_d]], 'Delete')
 map('n', '<A-w>', [[:set wrap!<CR>]], 'Toggle word wrap')
