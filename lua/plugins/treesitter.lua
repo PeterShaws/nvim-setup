@@ -5,6 +5,7 @@ return {
     config = function()
         local configs = require('nvim-treesitter.configs')
         configs.setup({
+            modules = {},
             ensure_installed = {
                 'lua',
                 'vim',
@@ -18,6 +19,7 @@ return {
             },
             auto_install = true,
             sync_install = false,
+            ignore_install = {},
             highlight = { enable = true },
             indent = { enable = true },
             textobjects = {
