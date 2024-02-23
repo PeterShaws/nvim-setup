@@ -186,24 +186,24 @@
 
 #### `gitsigns` (Git integration)
 
-| Modes |     Keys     | Description               |
-| :---: | :----------: | ------------------------- |
-|   n   |     `]c`     | Next change               |
-|   n   |     `[c`     | Previous change           |
-|   n   | `Leader``hs` | Stage hunk                |
-|   n   | `Leader``hr` | Reset hunk                |
-|   v   | `Leader``hs` | Stage hunk                |
-|   v   | `Leader``hr` | Reset hunk                |
-|   n   | `Leader``hS` | Stage buffer              |
-|   n   | `Leader``hu` | Unstage hunk              |
-|   n   | `Leader``hR` | Reset buffer              |
-|   n   | `Leader``hp` | Preview hunk              |
-|   n   | `Leader``hb` | Blame line                |
-|   n   | `Leader``tb` | Toggle current line blame |
-|   n   | `Leader``hd` | Compare to base           |
-|   n   | `Leader``hD` | Compare to last commit    |
-|   n   | `Leader``td` | Toggle deleted            |
-| o, x  |     `ih`     | Select hunk               |
+| Modes |     Keys      | Description               |
+| :---: | :-----------: | ------------------------- |
+|   n   |     `]c`      | Next change               |
+|   n   |     `[c`      | Previous change           |
+|   n   | `Leader` `hs` | Stage hunk                |
+|   n   | `Leader` `hr` | Reset hunk                |
+|   v   | `Leader` `hs` | Stage hunk                |
+|   v   | `Leader` `hr` | Reset hunk                |
+|   n   | `Leader` `hS` | Stage buffer              |
+|   n   | `Leader` `hu` | Unstage hunk              |
+|   n   | `Leader` `hR` | Reset buffer              |
+|   n   | `Leader` `hp` | Preview hunk              |
+|   n   | `Leader` `hb` | Blame line                |
+|   n   | `Leader` `tb` | Toggle current line blame |
+|   n   | `Leader` `hd` | Compare to base           |
+|   n   | `Leader` `hD` | Compare to last commit    |
+|   n   | `Leader` `td` | Toggle deleted            |
+| o, x  |     `ih`      | Select hunk               |
 
 #### `lazygit` (Git client)
 
@@ -221,25 +221,25 @@
 
 #### `nvim-lspconfig` (language server)
 
-| Modes |     Keys     | Description             |
-| :---: | :----------: | ----------------------- |
-|   n   |     `[d`     | Previous diagnostic     |
-|   n   |     `]d`     | Next diagnostic         |
-|   n   | `Leader``e`  | Show diagnostic         |
-|   n   | `Leader``E`  | Open diagnostics list   |
-|   n   |     `gD`     | Go to declaration       |
-|   n   |     `gd`     | Go to definition        |
-|   n   |     `K`      | Hover                   |
-|   n   |     `gi`     | Go to implementation    |
-|   n   |   `<C-k>`    | Show signature          |
-|   n   | `Leader``wf` | Add workspace folder    |
-|   n   | `Leader``wr` | Remove workspace folder |
-|   n   | `Leader``wl` | List workspace folders  |
-|   n   | `Leader``D`  | Go to type definition   |
-|   n   | `Leader``rn` | Rename                  |
-| n, v  | `Leader``ca` | Code actions            |
-|   n   |     `gr`     | List references         |
-|   n   | `Leader``bf` | Format buffer           |
+| Modes |     Keys      | Description             |
+| :---: | :-----------: | ----------------------- |
+|   n   |     `[d`      | Previous diagnostic     |
+|   n   |     `]d`      | Next diagnostic         |
+|   n   | `Leader` `e`  | Show diagnostic         |
+|   n   | `Leader` `E`  | Open diagnostics list   |
+|   n   |     `gD`      | Go to declaration       |
+|   n   |     `gd`      | Go to definition        |
+|   n   |      `K`      | Hover                   |
+|   n   |     `gi`      | Go to implementation    |
+|   n   |    `<C-k>`    | Show signature          |
+|   n   | `Leader` `wf` | Add workspace folder    |
+|   n   | `Leader` `wr` | Remove workspace folder |
+|   n   | `Leader` `wl` | List workspace folders  |
+|   n   | `Leader` `D`  | Go to type definition   |
+|   n   | `Leader` `rn` | Rename                  |
+| n, v  | `Leader` `ca` | Code actions            |
+|   n   |     `gr`      | List references         |
+|   n   | `Leader` `bf` | Format buffer           |
 
 #### `neo-tree` (file explorer)
 
@@ -266,29 +266,29 @@
 
 | Modes |     Keys      | Description           |
 | :---: | :-----------: | --------------------- |
-|   n   | `Leader``ff` | Find files            |
-|   n   | `Leader``fg` | Live grep             |
-|   n   | `Leader``fb` | Open buffers          |
-|   n   | `Leader``fh` | Help tags             |
-|   n   | `Leader``fk` | Key maps              |
-|   n   | `Leader``fc` | Switch colorscheme    |
-|   n   | `Leader``ft` | Treesitter symbols    |
-|   n   | `Leader``fs` | Document symbols      |
-|   n   | `Leader``fw` | Workspace symbols     |
-|   n   | `Leader``fd` | Diagnostics           |
-|   n   | `Leader``f/` | Search current buffer |
-|   n   | `Leader``fm` | Messages              |
+|   n   | `Leader` `ff` | Find files            |
+|   n   | `Leader` `fg` | Live grep             |
+|   n   | `Leader` `fb` | Open buffers          |
+|   n   | `Leader` `fh` | Help tags             |
+|   n   | `Leader` `fk` | Key maps              |
+|   n   | `Leader` `fc` | Switch colorscheme    |
+|   n   | `Leader` `ft` | Treesitter symbols    |
+|   n   | `Leader` `fs` | Document symbols      |
+|   n   | `Leader` `fw` | Workspace symbols     |
+|   n   | `Leader` `fd` | Diagnostics           |
+|   n   | `Leader` `f/` | Search current buffer |
+|   n   | `Leader` `fm` | Messages              |
 
 #### `trouble` (diagnostics)
 
 | Modes |     Keys      | Description           |
 | :---: | :-----------: | --------------------- |
-|   n   | `Leader``xx` | Toggle Trouble        |
-|   n   | `Leader``xw` | Workspace diagnostics |
-|   n   | `Leader``xd` | Document diagnostics  |
-|   n   | `Leader``xq` | Quickfix              |
-|   n   | `Leader``xl` | Location list         |
-|   n   | `Leader``xr` | LSP References        |
+|   n   | `Leader` `xx` | Toggle Trouble        |
+|   n   | `Leader` `xw` | Workspace diagnostics |
+|   n   | `Leader` `xd` | Document diagnostics  |
+|   n   | `Leader` `xq` | Quickfix              |
+|   n   | `Leader` `xl` | Location list         |
+|   n   | `Leader` `xr` | LSP References        |
 
 ## Optional
 
