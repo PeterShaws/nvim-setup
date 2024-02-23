@@ -1,5 +1,35 @@
 # My Neovim Setup
 
+<!-- mtoc-start -->
+
+* [Installation](#installation)
+* [Dependencies](#dependencies)
+* [Keymaps](#keymaps)
+  * [General Keymaps](#general-keymaps)
+    * [Insert mode navigation](#insert-mode-navigation)
+    * [Window navigation](#window-navigation)
+    * [Files/Buffers](#filesbuffers)
+    * [Text](#text)
+  * [Plugin keymaps](#plugin-keymaps)
+    * [`alpha` (Dashboard)](#alpha-dashboard)
+    * [`better-escape`](#better-escape)
+    * [`boole` (manipulate numbers and booleans)](#boole-manipulate-numbers-and-booleans)
+    * [`bufferline` and `bufdelete` (buffer tabs)](#bufferline-and-bufdelete-buffer-tabs)
+    * [`nvim-cmp` (autocompletion)](#nvim-cmp-autocompletion)
+    * [`floaterm` (floating terminal)](#floaterm-floating-terminal)
+    * [`gitsigns` (Git integration)](#gitsigns-git-integration)
+    * [`lazygit` (Git client)](#lazygit-git-client)
+    * [`leap` (document navigation)](#leap-document-navigation)
+    * [`nvim-lspconfig` (language server)](#nvim-lspconfig-language-server)
+    * [`neo-tree` (file explorer)](#neo-tree-file-explorer)
+    * [`surround` (wrap text with pairs of characters)](#surround-wrap-text-with-pairs-of-characters)
+    * [`telescope` (find things)](#telescope-find-things)
+    * [`trouble` (diagnostics)](#trouble-diagnostics)
+* [Optional](#optional)
+* [Plugins used](#plugins-used)
+
+<!-- mtoc-end -->
+
 ## Installation
 
 1. Clone this repository:
