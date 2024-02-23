@@ -79,7 +79,7 @@
 |   t   | `Ctrl`+`Shift`+`V` | Paste from clipboard into terminal   |
 | n, x  |        `x`         | Delete                               |
 | n, x  |        `X`         | Delete                               |
-|   n   |       `A``w`       | Toggle word wrap                     |
+|   n   |     `Alt`+`w`      | Toggle word wrap                     |
 |   n   |   `Leader` `cq`    | Double to single quotes              |
 |   n   |   `Leader` `cQ`    | Single to double quotes              |
 |   n   |    `Leader` `I`    | Reindent file                        |
