@@ -1,4 +1,4 @@
-# My _ongoing_ Neovim Setup 2.0
+# My Neovim Setup
 
 ## Installation
 
@@ -17,17 +17,18 @@
 
 1. `nodejs`/`npm`
 2. `lazygit`
-    - `ydiff` (optional, a pager that can show diffs side-by-side). Configured
-      like so:
 
-      ```yaml
-      gui:
-        sidePanelWidth: 0.2
-      git:
-        paging:
-          colorArg: never
-          pager: ydiff -p cat -s --wrap --width={{columnWidth}}
-      ```
+   - `ydiff` (optional, a pager that can show diffs side-by-side). Configured
+     like so:
+
+     ```yaml
+     gui:
+       sidePanelWidth: 0.2
+     git:
+       paging:
+         colorArg: never
+         pager: ydiff -p cat -s --wrap --width={{columnWidth}}
+     ```
 
 ## Keymaps
 
@@ -68,20 +69,21 @@
 
 #### Text
 
-| Modes |        Keys        | Description                        |
-| :---: | :----------------: | ---------------------------------- |
-|   n   |    `Leader` `A`    | Select all text                    |
-| n, x  |        `gy`        | Copy to clipboard                  |
-| n, x  |        `gp`        | Paste from clipboard               |
-|   t   | `Ctrl`+`Shift`+`C` | Copy from terminal into clipboard  |
-|   t   | `Ctrl`+`Shift`+`V` | Paste from clipboard into terminal |
-| n, x  |        `x`         | Delete                             |
-| n, x  |        `X`         | Delete                             |
-|   n   |       `A``w`       | Toggle word wrap                   |
-|   n   |   `Leader` `cq`    | Double to single quotes            |
-|   n   |   `Leader` `cQ`    | Single to double quotes            |
-|   n   |    `Leader` `I`    | Reindent file                      |
-|   n   |       `Esc`        | Clear search highlight             |
+| Modes |        Keys        | Description                          |
+| :---: | :----------------: | ------------------------------------ |
+|   n   |    `Leader` `A`    | Select all text                      |
+| n, x  |        `gy`        | Copy to clipboard                    |
+| n, x  |        `gp`        | Paste from clipboard (after cursor)  |
+| n, x  |        `gP`        | Paste from clipboard (before cursor) |
+|   t   | `Ctrl`+`Shift`+`C` | Copy from terminal into clipboard    |
+|   t   | `Ctrl`+`Shift`+`V` | Paste from clipboard into terminal   |
+| n, x  |        `x`         | Delete                               |
+| n, x  |        `X`         | Delete                               |
+|   n   |       `A``w`       | Toggle word wrap                     |
+|   n   |   `Leader` `cq`    | Double to single quotes              |
+|   n   |   `Leader` `cQ`    | Single to double quotes              |
+|   n   |    `Leader` `I`    | Reindent file                        |
+|   n   |       `Esc`        | Clear search highlight               |
 
 ### Plugin keymaps
 
@@ -205,7 +207,7 @@
 |   n   | `Leader`+`rn` | Rename                  |
 | n, v  | `Leader`+`ca` | Code actions            |
 |   n   |     `gr`      | List references         |
-|   n   | `Leader`+`cf` | Format buffer           |
+|   n   | `Leader`+`bf` | Format buffer           |
 
 #### `neo-tree` (file explorer)
 

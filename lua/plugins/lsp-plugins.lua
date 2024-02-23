@@ -112,7 +112,7 @@ return {
                     bmap('n', '<Leader>rn', buf.rename, { desc = 'Rename' })
                     bmap({ 'n', 'v' }, '<Leader>ca', buf.code_action, { desc = 'Code actions' })
                     bmap('n', 'gr', buf.references, { desc = 'List references' })
-                    bmap('n', '<Leader>cf', buf.format, { desc = 'Format buffer' })
+                    bmap('n', '<Leader>bf', buf.format, { desc = 'Format buffer' })
 
                     highlight_symbol(ev)
                 end,
