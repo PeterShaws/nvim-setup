@@ -1,3 +1,5 @@
+local u = require('user.utils')
+
 return {
     'folke/noice.nvim',
     event = 'VeryLazy',
@@ -36,6 +38,6 @@ return {
             }
         })
         require('telescope').load_extension('noice')
-        vim.keymap.set('n', '<Leader>fm', [[:Telescope noice<CR>]], { desc = 'Messages' })
+        u.map('n', '<Leader>fm', [[:Telescope noice<CR>]], 'Messages')
     end,
 }

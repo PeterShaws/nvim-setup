@@ -1,6 +1,4 @@
-local map = function(keys, handler, desc)
-    vim.keymap.set('n', keys, handler, { desc = desc })
-end
+local u = require('user.utils')
 
 return {
     {
@@ -18,17 +16,17 @@ return {
                 },
             })
             local builtin = require('telescope.builtin')
-            map('<Leader>ff', builtin.find_files, 'Find files')
-            map('<Leader>fg', builtin.live_grep, 'Live grep')
-            map('<Leader>fb', builtin.buffers, 'Open buffers')
-            map('<Leader>fh', builtin.help_tags, 'Help tags')
-            map('<Leader>fk', builtin.keymaps, 'Key maps')
-            map('<Leader>fc', builtin.colorscheme, 'Switch colorscheme')
-            map('<Leader>ft', builtin.treesitter, 'Treesitter symbols')
-            map('<Leader>fs', builtin.lsp_document_symbols, 'Document symbols')
-            map('<Leader>fw', builtin.lsp_dynamic_workspace_symbols, 'Workspace symbols')
-            map('<Leader>fd', builtin.diagnostics, 'Diagnostics')
-            map('<Leader>f/', function()
+            u.map('n', '<Leader>ff', builtin.find_files, 'Find files')
+            u.map('n', '<Leader>fg', builtin.live_grep, 'Live grep')
+            u.map('n', '<Leader>fb', builtin.buffers, 'Open buffers')
+            u.map('n', '<Leader>fh', builtin.help_tags, 'Help tags')
+            u.map('n', '<Leader>fk', builtin.keymaps, 'Key maps')
+            u.map('n', '<Leader>fc', builtin.colorscheme, 'Switch colorscheme')
+            u.map('n', '<Leader>ft', builtin.treesitter, 'Treesitter symbols')
+            u.map('n', '<Leader>fs', builtin.lsp_document_symbols, 'Document symbols')
+            u.map('n', '<Leader>fw', builtin.lsp_dynamic_workspace_symbols, 'Workspace symbols')
+            u.map('n', '<Leader>fd', builtin.diagnostics, 'Diagnostics')
+            u.map('n', '<Leader>f/', function()
                 builtin.current_buffer_fuzzy_find(
                     require('telescope.themes').get_dropdown({ previewer = false })
                 )

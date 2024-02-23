@@ -1,8 +1,6 @@
 vim.opt.updatetime = 400
 
-local map = function(keys, command, desc)
-    vim.keymap.set('n', keys, command, { desc = desc })
-end
+local u = require('user.utils')
 
 local function highlight_symbol(event)
     local id = vim.tbl_get(event, 'data', 'client_id')
@@ -77,10 +75,10 @@ return {
 
             -- Global mappings.
             -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-            map('[d', vim.diagnostic.goto_prev, 'Previous diagnostic')
-            map(']d', vim.diagnostic.goto_next, 'Next diagnostic')
-            map('<Leader>e', vim.diagnostic.open_float, 'Show diagnostic')
-            map('<Leader>E', vim.diagnostic.setloclist, 'Open diagnostics list')
+            u.map('n', '[d', vim.diagnostic.goto_prev, 'Previous diagnostic')
+            u.map('n', ']d', vim.diagnostic.goto_next, 'Next diagnostic')
+            u.map('n', '<Leader>e', vim.diagnostic.open_float, 'Show diagnostic')
+            u.map('n', '<Leader>E', vim.diagnostic.setloclist, 'Open diagnostics list')
 
             -- Use LspAttach autocommand to only map the following keys
             -- after the language server attaches to the current buffer
@@ -90,27 +88,29 @@ return {
                     -- Enable completion triggered by <c-x><c-o>
                     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
-                    -- Buffer local mappings.
+                    -- Local buffer mappings.
                     -- See `:help vim.lsp.*` for documentation on any of the below functions
-                    local bmap = function(mode, key, handler, desc)
-                        vim.keymap.set(mode, key, handler, { buffer = ev.buf, desc = desc })
+                    local map = function(mode, key, handler, desc)
+                        vim.keymap.set(mode, key, handler, {
+                            buffer = ev.buf, desc = desc, silent = true
+                        })
                     end
 
                     local buf = vim.lsp.buf
-                    bmap('n', 'gD', buf.declaration, 'Go to declaration')
-                    bmap('n', 'gd', buf.definition, 'Go to definition')
-                    bmap('n', 'K', buf.hover, 'Hover')
-                    bmap('n', 'gi', buf.implementation, 'Go to implementation')
-                    bmap('n', '<C-k>', buf.signature_help, 'Show signature')
-                    bmap('n', '<Leader>wf', buf.add_workspace_folder, 'Add workspace folder')
-                    bmap('n', '<Leader>wr', buf.remove_workspace_folder, 'Remove workspace folder')
-                    bmap('n', '<Leader>wl', function() print(vim.inspect(buf.list_workspace_folders())) end,
+                    map('n', 'gD', buf.declaration, 'Go to declaration')
+                    map('n', 'gd', buf.definition, 'Go to definition')
+                    map('n', 'K', buf.hover, 'Hover')
+                    map('n', 'gi', buf.implementation, 'Go to implementation')
+                    map('n', '<C-k>', buf.signature_help, 'Show signature')
+                    map('n', '<Leader>wf', buf.add_workspace_folder, 'Add workspace folder')
+                    map('n', '<Leader>wr', buf.remove_workspace_folder, 'Remove workspace folder')
+                    map('n', '<Leader>wl', function() print(vim.inspect(buf.list_workspace_folders())) end,
                         'List workspace folders')
-                    bmap('n', '<Leader>D', buf.type_definition, 'Go to type definition')
-                    bmap('n', '<Leader>rn', buf.rename, 'Rename')
-                    bmap({ 'n', 'v' }, '<Leader>ca', buf.code_action, 'Code actions')
-                    bmap('n', 'gr', buf.references, 'List references')
-                    bmap('n', '<Leader>bf', buf.format, 'Format buffer')
+                    map('n', '<Leader>D', buf.type_definition, 'Go to type definition')
+                    map('n', '<Leader>rn', buf.rename, 'Rename')
+                    map({ 'n', 'v' }, '<Leader>ca', buf.code_action, 'Code actions')
+                    map('n', 'gr', buf.references, 'List references')
+                    map('n', '<Leader>bf', buf.format, 'Format buffer')
 
                     highlight_symbol(ev)
                 end,

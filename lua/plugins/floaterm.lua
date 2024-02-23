@@ -1,6 +1,4 @@
-local map = function(mode, keys, command, desc)
-    vim.keymap.set(mode, keys, command, { desc = desc, silent = true })
-end
+local u = require('user.utils')
 
 return {
     'voldikss/vim-floaterm',
@@ -9,7 +7,7 @@ return {
         vim.g.floaterm_height = 0.92
         vim.g.floaterm_borderchars = '─│─│╭╮╯╰'
 
-        map('n', '<F12>', [[:FloatermToggle<CR>]], 'Toggle floating terminal')
-        map('t', '<F12>', [[:FloatermToggle<CR>]], 'Toggle floating terminal')
+        u.map('n', '<F12>', [[:FloatermToggle<CR>]], 'Toggle floating terminal')
+        u.map('t', '<F12>', [[:FloatermToggle<CR>]], 'Toggle floating terminal')
     end,
 }
