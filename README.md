@@ -15,8 +15,10 @@
 
 ## Dependencies
 
-1. `nodejs`/`npm`
-2. `lazygit`
+1. `nodejs`/`npm` -- to download LSPs, formatters, etc.
+2. `rg` -- for fuzzy finding
+3. `fd` -- for finding files
+4. `lazygit`
 
    - `ydiff` (optional, a pager that can show diffs side-by-side). Configured
      like so:
@@ -59,7 +61,7 @@
 
 | Modes |     Keys      | Description                          |
 | :---: | :-----------: | ------------------------------------ |
-|   n   | `Leader` `cd` | Change to buffer’s directory         |
+|   n   | `Leader` `bd` | Change to buffer’s directory         |
 |   n   | `Leader` `bw` | Write the current buffer             |
 |   n   | `Leader` `ba` | Write all open buffers               |
 |   n   | `Leader` `qa` | Close all open buffers               |
@@ -80,9 +82,9 @@
 | n, x  |        `x`         | Delete                               |
 | n, x  |        `X`         | Delete                               |
 |   n   |     `Alt`+`w`      | Toggle word wrap                     |
-|   n   |   `Leader` `cq`    | Double to single quotes              |
-|   n   |   `Leader` `cQ`    | Single to double quotes              |
-|   n   |    `Leader` `I`    | Reindent file                        |
+|   n   |   `Leader` `cq`    | Double quotes to single              |
+|   n   |   `Leader` `cQ`    | Single quotes to double              |
+|   n   |   `Leader` `ci`    | Reindent file                        |
 |   n   |       `Esc`        | Clear search highlight               |
 
 ### Plugin keymaps
@@ -108,25 +110,25 @@
 
 #### `bufferline` and `bufdelete` (buffer tabs)
 
-| Modes |   Keys    | Description                |
-| :---: | :-------: | -------------------------- |
-|   n   | `Alt`+`1` | Go to 1st buffer           |
-|   n   | `Alt`+`2` | Go to 2nd buffer           |
-|   n   | `Alt`+`3` | Go to 3rd buffer           |
-|   n   | `Alt`+`4` | Go to 4th buffer           |
-|   n   | `Alt`+`5` | Go to 5th buffer           |
-|   n   | `Alt`+`6` | Go to 6th buffer           |
-|   n   | `Alt`+`7` | Go to 7th buffer           |
-|   n   | `Alt`+`8` | Go to 8th buffer           |
-|   n   | `Alt`+`9` | Go to 9th buffer           |
-|   n   | `Alt`+`0` | Go to last buffer          |
-|   n   | `Alt`+`p` | Pick open buffer           |
-|   n   | `Alt`+`h` | Go to previous buffer      |
-|   n   | `Alt`+`l` | Go to next buffer          |
-|   n   | `Alt`+`O` | Close other buffers        |
-|   n   | `Alt`+`L` | Close buffers to the left  |
-|   n   | `Alt`+`R` | Close buffers to the right |
-|   n   | `Alt`+`c` | Close current buffer       |
+| Modes |       Keys        | Description                |
+| :---: | :---------------: | -------------------------- |
+|   n   |     `Alt`+`1`     | Go to 1st buffer           |
+|   n   |     `Alt`+`2`     | Go to 2nd buffer           |
+|   n   |     `Alt`+`3`     | Go to 3rd buffer           |
+|   n   |     `Alt`+`4`     | Go to 4th buffer           |
+|   n   |     `Alt`+`5`     | Go to 5th buffer           |
+|   n   |     `Alt`+`6`     | Go to 6th buffer           |
+|   n   |     `Alt`+`7`     | Go to 7th buffer           |
+|   n   |     `Alt`+`8`     | Go to 8th buffer           |
+|   n   |     `Alt`+`9`     | Go to 9th buffer           |
+|   n   |     `Alt`+`0`     | Go to last buffer          |
+|   n   |     `Alt`+`p`     | Pick open buffer           |
+|   n   |     `Alt`+`h`     | Go to previous buffer      |
+|   n   |     `Alt`+`l`     | Go to next buffer          |
+|   n   | `Alt`+`Shift`+`o` | Close other buffers        |
+|   n   | `Alt`+`Shift`+`l` | Close buffers to the left  |
+|   n   | `Alt`+`Shift`+`r` | Close buffers to the right |
+|   n   |     `Alt`+`c`     | Close current buffer       |
 
 #### `nvim-cmp` (autocompletion)
 

@@ -7,7 +7,7 @@ return {
         local which_key = require('which-key')
         which_key.register({
             ['<Leader>b'] = { name = 'Buffer', _ = 'which_key_ignore' },
-            ['<Leader>c'] = { name = 'Change', _ = 'which_key_ignore' },
+            ['<Leader>c'] = { name = 'Code', _ = 'which_key_ignore' },
             ['<Leader>f'] = { name = 'Find', _ = 'which_key_ignore' },
             ['<Leader>h'] = { name = 'Git Hunk', _ = 'which_key_ignore' },
             ['<Leader>q'] = { name = 'Quit', _ = 'which_key_ignore' },
@@ -19,7 +19,7 @@ return {
             [']'] = { name = 'Next', _ = 'which_key_ignore' },
         })
         which_key.register({
-            ['<Leader>c'] = { name = 'Code Actions', _ = 'which_key_ignore' },
+            ['<Leader>c'] = { name = 'Code', _ = 'which_key_ignore' },
             ['<Leader>h'] = { name = 'Git Hunk', _ = 'which_key_ignore' },
             ['['] = { name = 'Previous', _ = 'which_key_ignore' },
             [']'] = { name = 'Next', _ = 'which_key_ignore' },

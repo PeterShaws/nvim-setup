@@ -20,7 +20,7 @@ map('n', '<C-l>', [[<C-w>l]], 'Focus window to the right')
 map('n', '<C-c>', [[<C-w>c]], 'Close current window')
 
 --[[ Files/Buffers ]]
-map('n', '<Leader>cd', [[:cd %:h<CR>]], 'Change to buffer’s directory')
+map('n', '<Leader>bd', [[:cd %:h<CR>]], 'Change to buffer’s directory')
 map('n', '<Leader>bw', [[:write<CR>]], 'Write the current buffer')
 map('n', '<Leader>ba', [[:wall<CR>]], 'Write all open buffers')
 map('n', '<Leader>qa', [[:%bdelete!|Alpha|bdelete#|Neotree close<CR>]], 'Close all open buffers')
@@ -38,9 +38,9 @@ map('t', '<C-S-V>', [["+p]], 'Paste from clipboard into terminal')
 map({ 'n', 'x' }, 'x', [["_x]], 'Delete')
 map({ 'n', 'x' }, 'X', [["_d]], 'Delete')
 map('n', '<A-w>', [[:set wrap!<CR>]], 'Toggle word wrap')
-map('n', '<Leader>cq', [[:%s/"/'/g<CR>]], 'Double to single quotes')
-map('n', '<Leader>cQ', [[:%s/'/"/g<CR>]], 'Single to double quotes')
-map('n', '<Leader>I', [[gg=G]], 'Reindent file')
+map('n', '<Leader>cq', [[:%s/"/'/g<CR>]], 'Double quotes to single')
+map('n', '<Leader>cQ', [[:%s/'/"/g<CR>]], 'Single quotes to double')
+map('n', '<Leader>ci', [[gg=G]], 'Reindent')
 map('n', '<Esc>', [[:noh<CR>]], 'Clear search highlight')
 
 --[[ Autocommands ]]

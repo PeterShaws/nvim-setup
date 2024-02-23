@@ -92,27 +92,25 @@ return {
 
                     -- Buffer local mappings.
                     -- See `:help vim.lsp.*` for documentation on any of the below functions
-                    local bmap = function(mode, key, handler, opts)
-                        opts = opts or {}
-                        opts.buffer = ev.buf
-                        vim.keymap.set(mode, key, handler, opts)
+                    local bmap = function(mode, key, handler, desc)
+                        vim.keymap.set(mode, key, handler, { buffer = ev.buf, desc = desc })
                     end
-                    local buf = vim.lsp.buf
 
-                    bmap('n', 'gD', buf.declaration, { desc = 'Go to declaration' })
-                    bmap('n', 'gd', buf.definition, { desc = 'Go to definition' })
-                    bmap('n', 'K', buf.hover, { desc = 'Hover' })
-                    bmap('n', 'gi', buf.implementation, { desc = 'Go to implementation' })
-                    bmap('n', '<C-k>', buf.signature_help, { desc = 'Show signature' })
-                    bmap('n', '<Leader>wf', buf.add_workspace_folder, { desc = 'Add workspace folder' })
-                    bmap('n', '<Leader>wr', buf.remove_workspace_folder, { desc = 'Remove workspace folder' })
+                    local buf = vim.lsp.buf
+                    bmap('n', 'gD', buf.declaration, 'Go to declaration')
+                    bmap('n', 'gd', buf.definition, 'Go to definition')
+                    bmap('n', 'K', buf.hover, 'Hover')
+                    bmap('n', 'gi', buf.implementation, 'Go to implementation')
+                    bmap('n', '<C-k>', buf.signature_help, 'Show signature')
+                    bmap('n', '<Leader>wf', buf.add_workspace_folder, 'Add workspace folder')
+                    bmap('n', '<Leader>wr', buf.remove_workspace_folder, 'Remove workspace folder')
                     bmap('n', '<Leader>wl', function() print(vim.inspect(buf.list_workspace_folders())) end,
-                        { desc = 'List workspace folders' })
-                    bmap('n', '<Leader>D', buf.type_definition, { desc = 'Go to type definition' })
-                    bmap('n', '<Leader>rn', buf.rename, { desc = 'Rename' })
-                    bmap({ 'n', 'v' }, '<Leader>ca', buf.code_action, { desc = 'Code actions' })
-                    bmap('n', 'gr', buf.references, { desc = 'List references' })
-                    bmap('n', '<Leader>bf', buf.format, { desc = 'Format buffer' })
+                        'List workspace folders')
+                    bmap('n', '<Leader>D', buf.type_definition, 'Go to type definition')
+                    bmap('n', '<Leader>rn', buf.rename, 'Rename')
+                    bmap({ 'n', 'v' }, '<Leader>ca', buf.code_action, 'Code actions')
+                    bmap('n', 'gr', buf.references, 'List references')
+                    bmap('n', '<Leader>bf', buf.format, 'Format buffer')
 
                     highlight_symbol(ev)
                 end,
