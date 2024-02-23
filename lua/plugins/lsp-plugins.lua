@@ -54,6 +54,7 @@ return {
             lspconfig.pyright.setup({ capabilities = lsp_capabilities })
             lspconfig.jsonls.setup({ capabilities = lsp_capabilities })
             lspconfig.tsserver.setup({ capabilities = lsp_capabilities })
+            lspconfig.marksman.setup({ capabilities = lsp_capabilities })
             lspconfig.lua_ls.setup({
                 capabilities = lsp_capabilities,
                 settings = {
