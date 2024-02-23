@@ -4,7 +4,6 @@ return {
     'ggandor/leap.nvim',
     config = function()
         local leap = require('leap')
-        --[[ leap.create_default_mappings() ]]
         -- The plugin function gives an unskippable warning if Surround
         -- is installed. Thus we set these manually.
         u.map({ 'n', 'x', 'o' }, 's', [[<Plug>(leap-forward)]], 'Leap forward')
