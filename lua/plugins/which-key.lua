@@ -10,7 +10,6 @@ return {
             ['<Leader>c'] = { name = 'Code', _ = 'which_key_ignore' },
             ['<Leader>f'] = { name = 'Find', _ = 'which_key_ignore' },
             ['<Leader>h'] = { name = 'Git Hunk', _ = 'which_key_ignore' },
-            ['<Leader>l'] = { name = 'LSP', _ = 'which_key_ignore' },
             ['<Leader>q'] = { name = 'Quit', _ = 'which_key_ignore' },
             ['<Leader>r'] = { name = 'Rename', _ = 'which_key_ignore' },
             ['<Leader>t'] = { name = 'Toggle', _ = 'which_key_ignore' },
