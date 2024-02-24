@@ -91,26 +91,31 @@ return {
                     -- Local buffer mappings.
                     -- See `:help vim.lsp.*` for documentation on any of the below functions
                     local map = function(mode, key, handler, desc)
+                        -- if desc then desc = 'LSP: ' .. desc end
                         vim.keymap.set(mode, key, handler, {
                             buffer = ev.buf, desc = desc, silent = true
                         })
                     end
 
                     local buf = vim.lsp.buf
+                    local builtin = require('telescope.builtin')
+
+                    map('n', '<Leader>rn', buf.rename, 'Rename')
+                    map({ 'n', 'v' }, '<Leader>ca', buf.code_action, 'Code actions')
+                    map('n', '<Leader>ld', builtin.lsp_definitions, 'Definition')
+                    map('n', '<Leader>lr', builtin.lsp_references, 'References')
+                    map('n', '<Leader>li', builtin.lsp_implementations, 'Implementations')
+                    map('n', '<Leader>lD', builtin.lsp_type_definitions, 'Type Definition')
+                    map('n', '<Leader>ls', builtin.lsp_document_symbols, 'Document Symbols')
+                    map('n', '<Leader>lw', builtin.lsp_dynamic_workspace_symbols, 'Workspace Symbols')
+                    map('n', '<Leader>lf', buf.format, 'Format Buffer')
+                    map('n', 'K', buf.hover, 'Hover Documentation')
+                    map('n', '<C-k>', buf.signature_help, 'Signature Documentation')
                     map('n', 'gD', buf.declaration, 'Go to declaration')
-                    map('n', 'gd', buf.definition, 'Go to definition')
-                    map('n', 'K', buf.hover, 'Hover')
-                    map('n', 'gi', buf.implementation, 'Go to implementation')
-                    map('n', '<C-k>', buf.signature_help, 'Show signature')
-                    map('n', '<Leader>wf', buf.add_workspace_folder, 'Add workspace folder')
+                    map('n', '<Leader>wf', buf.add_workspace_folder, 'Add Workspace Folder')
                     map('n', '<Leader>wr', buf.remove_workspace_folder, 'Remove workspace folder')
                     map('n', '<Leader>wl', function() print(vim.inspect(buf.list_workspace_folders())) end,
                         'List workspace folders')
-                    map('n', '<Leader>D', buf.type_definition, 'Go to type definition')
-                    map('n', '<Leader>rn', buf.rename, 'Rename')
-                    map({ 'n', 'v' }, '<Leader>ca', buf.code_action, 'Code actions')
-                    map('n', 'gr', buf.references, 'List references')
-                    map('n', '<Leader>bf', buf.format, 'Format buffer')
 
                     highlight_symbol(ev)
                 end,
