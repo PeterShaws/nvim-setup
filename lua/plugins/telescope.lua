@@ -23,6 +23,7 @@ return {
             u.map('n', '<Leader>fk', builtin.keymaps, 'Key maps')
             u.map('n', '<Leader>fc', builtin.colorscheme, 'Switch colorscheme')
             u.map('n', '<Leader>ft', builtin.treesitter, 'Treesitter symbols')
+            u.map('n', '<Leader>fd', builtin.diagnostics, 'Diagnostics')
             u.map('n', '<Leader>f/', function()
                 builtin.current_buffer_fuzzy_find(
                     require('telescope.themes').get_dropdown({ previewer = false })

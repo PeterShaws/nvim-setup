@@ -50,7 +50,7 @@
 3. `fd` -- for finding files
 4. `lazygit`
 
-   * `ydiff` (optional, a pager that can show diffs side-by-side). Configured
+   - `ydiff` (optional, a pager that can show diffs side-by-side). Configured
      like so:
 
      ```yaml
@@ -79,13 +79,14 @@
 
 #### Window navigation
 
-| Modes |    Keys    | Description               |
-| :---: | :--------: | ------------------------- |
-|   n   | `Ctrl`+`h` | Focus window to the left  |
-|   n   | `Ctrl`+`j` | Focus window below        |
-|   n   | `Ctrl`+`k` | Focus window above        |
-|   n   | `Ctrl`+`l` | Focus window to the right |
-|   n   | `Ctrl`+`c` | Close current window      |
+| Modes |        Keys        | Description               |
+| :---: | :----------------: | ------------------------- |
+|   n   |     `Ctrl`+`h`     | Focus window to the left  |
+|   n   |     `Ctrl`+`j`     | Focus window below        |
+|   n   |     `Ctrl`+`k`     | Focus window above        |
+|   n   |     `Ctrl`+`l`     | Focus window to the right |
+|   n   |     `Ctrl`+`c`     | Close current window      |
+|   n   | `Ctrl`+`Shift`+`o` | Close other windows       |
 
 #### Files/Buffers
 
@@ -309,45 +310,45 @@ mode (useful e.g. for LazyGit).
 
 ## Plugins used
 
-* [alpha-nvim](https://github.com/goolord/alpha-nvim)
-* [better-escape.nvim](https://github.com/max397574/better-escape.nvim)
-* [boole.nvim](https://github.com/nat-418/boole.nvim)
-* [bufdelete.nvim](https://github.com/famiu/bufdelete.nvim)
-* [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
-* [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
-* [cmp-path](https://github.com/hrsh7th/cmp-path)
-* [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
-* [Comment.nvim](https://github.com/numToStr/Comment.nvim)
-* [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
-* [github-nvim-theme](https://github.com/projekt0n/github-nvim-theme)
-* [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
-* [lazy.nvim](https://github.com/folke/lazy.nvim)
-* [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
-* [leap.nvim](https://github.com/ggandor/leap.nvim)
-* [lsp-colors.nvim](https://github.com/folke/lsp-colors.nvim)
-* [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
-* [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
-* [markdown-toc.nvim](https://github.com/hedyhli/markdown-toc.nvim)
-* [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
-* [mason.nvim](https://github.com/williamboman/mason.nvim)
-* [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
-* [neodev.nvim](https://github.com/folke/neodev.nvim)
-* [noice.nvim](https://github.com/folke/noice.nvim)
-* [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim)
-* [nui.nvim](https://github.com/MunifTanjim/nui.nvim)
-* [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
-* [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-* [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-* [nvim-notify](https://github.com/rcarriga/nvim-notify)
-* [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
-* [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-* [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
-* [nvim-window-picker](https://github.com/s1n7ax/nvim-window-picker)
-* [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
-* [telescope-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim)
-* [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-* [trouble.nvim](https://github.com/folke/trouble.nvim)
-* [vim-floaterm](https://github.com/voldikss/vim-floaterm)
-* [vim-fugitive](https://github.com/tpope/vim-fugitive)
-* [vim-surround](https://github.com/tpope/vim-surround)
-* [which-key.nvim](https://github.com/folke/which-key.nvim)
+- [alpha-nvim](https://github.com/goolord/alpha-nvim)
+- [better-escape.nvim](https://github.com/max397574/better-escape.nvim)
+- [boole.nvim](https://github.com/nat-418/boole.nvim)
+- [bufdelete.nvim](https://github.com/famiu/bufdelete.nvim)
+- [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
+- [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
+- [cmp-path](https://github.com/hrsh7th/cmp-path)
+- [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
+- [Comment.nvim](https://github.com/numToStr/Comment.nvim)
+- [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
+- [github-nvim-theme](https://github.com/projekt0n/github-nvim-theme)
+- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+- [lazy.nvim](https://github.com/folke/lazy.nvim)
+- [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
+- [leap.nvim](https://github.com/ggandor/leap.nvim)
+- [lsp-colors.nvim](https://github.com/folke/lsp-colors.nvim)
+- [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
+- [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+- [markdown-toc.nvim](https://github.com/hedyhli/markdown-toc.nvim)
+- [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
+- [mason.nvim](https://github.com/williamboman/mason.nvim)
+- [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
+- [neodev.nvim](https://github.com/folke/neodev.nvim)
+- [noice.nvim](https://github.com/folke/noice.nvim)
+- [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim)
+- [nui.nvim](https://github.com/MunifTanjim/nui.nvim)
+- [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- [nvim-notify](https://github.com/rcarriga/nvim-notify)
+- [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
+- [nvim-window-picker](https://github.com/s1n7ax/nvim-window-picker)
+- [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+- [telescope-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim)
+- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [trouble.nvim](https://github.com/folke/trouble.nvim)
+- [vim-floaterm](https://github.com/voldikss/vim-floaterm)
+- [vim-fugitive](https://github.com/tpope/vim-fugitive)
+- [vim-surround](https://github.com/tpope/vim-surround)
+- [which-key.nvim](https://github.com/folke/which-key.nvim)
