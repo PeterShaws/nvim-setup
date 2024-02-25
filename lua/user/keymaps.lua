@@ -16,10 +16,9 @@ u.map('n', '<C-j>', [[<C-w>j]], 'Focus window below')
 u.map('n', '<C-k>', [[<C-w>k]], 'Focus window above')
 u.map('n', '<C-l>', [[<C-w>l]], 'Focus window to the right')
 u.map('n', '<C-c>', [[<C-w>c]], 'Close current window')
-u.map('n', '<C-o>', [[<C-w>o]], 'Close other windows')
 
 -- Files/Buffers
-u.map('n', '<Leader>bd', [[:cd %:h<CR>]], 'Change to buffer’s directory')
+u.map('n', '<Leader>bd', [[:cd %:h<CR>]], 'Change to current buffer’s directory')
 u.map('n', '<Leader>bw', [[:write<CR>]], 'Write the current buffer')
 u.map('n', '<Leader>ba', [[:wall<CR>]], 'Write all open buffers')
 u.map('n', '<Leader>qa', [[:%bdelete!|Alpha|bdelete#|Neotree close<CR>]], 'Close all open buffers')

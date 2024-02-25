@@ -38,17 +38,19 @@
    git clone https://github.com/PeterShaws/nvim-setup.git ~/.config/nvim
    ```
 
-2. `cd` into `~/.config/nvim`
-3. Launch Neovim and wait for Lazy's UI to appear, then wait for it to sync all
-   plugins
-4. You should be good to go; if not, relaunch Neovim
+2. `cd` into `~/.config/nvim`;
+3. Launch Neovim (`nvim`) and wait for Lazy's UI to appear, then wait for it to
+   sync all plugins;
+4. You should be good to go; if not, relaunch Neovim.
 
 ## Dependencies
 
-1. `nodejs`/`npm` -- to download LSPs, formatters, etc.
-2. `rg` -- for fuzzy finding
-3. `fd` -- for finding files
-4. `lazygit`
+1. `nodejs`/`npm` -- to download LSPs, formatters, etc.;
+2. `rg` -- for fuzzy finding;
+3. `fd` -- for finding files;
+4. `lazygit`.
+
+   `~/.config/lazygit/config.yml`
 
    - `ydiff` (optional, a pager that can show diffs side-by-side). Configured
      like so:
@@ -65,6 +67,8 @@
 ## Keymaps
 
 > Note: In the tables below, `Leader` means `Space` with this configuration.
+
+> Note: Most if not all of these should be covered by the `which-key` plugin.
 
 ### General Keymaps
 
@@ -86,13 +90,12 @@
 |   n   |     `Ctrl`+`k`     | Focus window above        |
 |   n   |     `Ctrl`+`l`     | Focus window to the right |
 |   n   |     `Ctrl`+`c`     | Close current window      |
-|   n   | `Ctrl`+`Shift`+`o` | Close other windows       |
 
 #### Files/Buffers
 
 | Modes |     Keys      | Description                          |
 | :---: | :-----------: | ------------------------------------ |
-|   n   | `Leader` `bd` | Change to buffer’s directory         |
+|   n   | `Leader` `bd` | Change to current buffer’s directory |
 |   n   | `Leader` `bw` | Write the current buffer             |
 |   n   | `Leader` `ba` | Write all open buffers               |
 |   n   | `Leader` `qa` | Close all open buffers               |
@@ -181,16 +184,16 @@
 
 #### `floaterm` (floating terminal)
 
-| Modes | Keys  | Description            |
-| :---: | :---: | ---------------------- |
-|   n   | `F12` | Open floating terminal |
+| Modes | Keys  | Description              |
+| :---: | :---: | ------------------------ |
+|   n   | `F12` | Toggle floating terminal |
 
 #### `gitsigns` (Git integration)
 
 | Modes |     Keys      | Description               |
 | :---: | :-----------: | ------------------------- |
-|   n   |     `]c`      | Next change               |
-|   n   |     `[c`      | Previous change           |
+|   n   |     `]c`      | Next changed hunk         |
+|   n   |     `[c`      | Previous changed hunk     |
 |   n   | `Leader` `hs` | Stage hunk                |
 |   n   | `Leader` `hr` | Reset hunk                |
 |   v   | `Leader` `hs` | Stage hunk                |
@@ -228,25 +231,29 @@
 |   n   |     `]d`      | Next diagnostic         |
 |   n   | `Leader` `e`  | Show diagnostic         |
 |   n   | `Leader` `E`  | Open diagnostics list   |
+|   n   | `Leader` `lr` | Rename symbol           |
+| n, v  | `Leader` `ca` | Code actions            |
+|   n   | `Leader` `ld` | Definition              |
+|   n   | `Leader` `lR` | References              |
+|   n   | `Leader` `li` | Implementations         |
+|   n   | `Leader` `lD` | Type definition         |
+|   n   | `Leader` `ls` | Document symbols        |
+|   n   | `Leader` `lw` | Workspace symbols       |
+|   n   | `Leader` `lf` | Format buffer           |
+|   n   |      `K`      | Hover documentation     |
+|   n   |    `<C-k>`    | Signature documentation |
 |   n   |     `gD`      | Go to declaration       |
-|   n   |     `gd`      | Go to definition        |
-|   n   |      `K`      | Hover                   |
-|   n   |     `gi`      | Go to implementation    |
-|   n   |    `<C-k>`    | Show signature          |
 |   n   | `Leader` `wf` | Add workspace folder    |
 |   n   | `Leader` `wr` | Remove workspace folder |
 |   n   | `Leader` `wl` | List workspace folders  |
-|   n   | `Leader` `D`  | Go to type definition   |
-|   n   | `Leader` `rn` | Rename                  |
-| n, v  | `Leader` `ca` | Code actions            |
-|   n   |     `gr`      | List references         |
-|   n   | `Leader` `bf` | Format buffer           |
 
 #### `neo-tree` (file explorer)
 
 | Modes |     Keys     | Description         |
 | :---: | :----------: | ------------------- |
 |   n   |     `F2`     | File explorer       |
+|   n   |     `F3`     | Open Buffers        |
+|   n   |     `F4`     | Git Status          |
 |   n   | `Shift`+`F2` | Close file explorer |
 
 #### `surround` (wrap text with pairs of characters)
@@ -272,13 +279,12 @@
 |   n   | `Leader` `fb` | Open buffers          |
 |   n   | `Leader` `fh` | Help tags             |
 |   n   | `Leader` `fk` | Key maps              |
-|   n   | `Leader` `fc` | Switch colorscheme    |
+|   n   | `Leader` `fc` | Colorschemes          |
 |   n   | `Leader` `ft` | Treesitter symbols    |
-|   n   | `Leader` `fs` | Document symbols      |
-|   n   | `Leader` `fw` | Workspace symbols     |
 |   n   | `Leader` `fd` | Diagnostics           |
 |   n   | `Leader` `f/` | Search current buffer |
 |   n   | `Leader` `fm` | Messages              |
+|   n   | `Leader` `fT` | Themes                |
 
 #### `trouble` (diagnostics)
 

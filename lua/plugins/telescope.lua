@@ -6,7 +6,8 @@ return {
         tag = '0.1.5',
         dependencies = { 'nvim-lua/plenary.nvim' },
         config = function()
-            require('telescope').setup({
+            local telescope = require('telescope')
+            telescope.setup({
                 defaults = {
                     prompt_prefix = ' ',
                     selection_caret = ' ',
@@ -21,7 +22,7 @@ return {
             u.map('n', '<Leader>fb', builtin.buffers, 'Open buffers')
             u.map('n', '<Leader>fh', builtin.help_tags, 'Help tags')
             u.map('n', '<Leader>fk', builtin.keymaps, 'Key maps')
-            u.map('n', '<Leader>fc', builtin.colorscheme, 'Switch colorscheme')
+            u.map('n', '<Leader>fc', builtin.colorscheme, 'Colorschemes')
             u.map('n', '<Leader>ft', builtin.treesitter, 'Treesitter symbols')
             u.map('n', '<Leader>fd', builtin.diagnostics, 'Diagnostics')
             u.map('n', '<Leader>f/', function()
