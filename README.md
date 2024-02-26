@@ -4,7 +4,7 @@
 
 * [Installation](#installation)
 * [Dependencies](#dependencies)
-* [Optional GUI](#optional-gui)
+* [GUI (Optional)](#gui-optional)
 * [Plugins used](#plugins-used)
 * [Colorschemes installed](#colorschemes-installed)
 * [Keymaps](#keymaps)
@@ -69,17 +69,17 @@
      editPreset: "nvim"
    ```
 
-## Optional GUI
+## GUI (Optional)
 
 Use [Neovide](https://neovide.dev) as a GUI for Neovim. My current Neovide
 configuration (`~/.config/neovide/config.toml`) is as follows:
 
 ```toml
 [font]
-normal = { "family" = "JetBrainsMono Nerd Font", "style" = "Normal" }
-bold = { "family" = "JetBrainsMono Nerd Font", "style" = "Bold" }
-italic = { "family" = "JetBrainsMono Nerd Font", "style" = "Italic" }
-bold_italic = { "family" = "JetBrainsMono Nerd Font", "style" = "Bold Italic" }
+normal = { "family" = "JetBrainsMono Nerd Font", "style" = "Light" }
+bold = { "family" = "JetBrainsMono Nerd Font", "style" = "SemiBold" }
+italic = { "family" = "JetBrainsMono Nerd Font", "style" = "Light Italic" }
+bold_italic = { "family" = "JetBrainsMono Nerd Font", "style" = "SemiBold Italic" }
 size = 16
 hinting = "none"
 edging = "subpixelantialias"

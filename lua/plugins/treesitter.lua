@@ -7,15 +7,17 @@ return {
         configs.setup({
             modules = {},
             ensure_installed = {
+                'bash',
+                'css',
+                'html',
+                'javascript',
                 'lua',
+                'markdown',
+                'markdown_inline',
+                'python',
+                'typescript',
                 'vim',
                 'vimdoc',
-                'javascript',
-                'typescript',
-                'html',
-                'css',
-                'python',
-                'bash'
             },
             auto_install = true,
             sync_install = false,

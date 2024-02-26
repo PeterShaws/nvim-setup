@@ -1,1 +1,1 @@
-github_dark_default
+onedark
