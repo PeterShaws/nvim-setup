@@ -50,8 +50,6 @@
 3. `fd` -- for finding files;
 4. `lazygit`.
 
-   `~/.config/lazygit/config.yml`
-
    - `ydiff` (optional, a pager that can show diffs side-by-side). Configured
      like so:
 
@@ -63,6 +61,8 @@
          colorArg: never
          pager: ydiff -p cat -s --wrap --width={{columnWidth}}
      ```
+
+   - `~/.config/lazygit/config.yml`
 
 ## Keymaps
 
@@ -83,13 +83,13 @@
 
 #### Window navigation
 
-| Modes |        Keys        | Description               |
-| :---: | :----------------: | ------------------------- |
-|   n   |     `Ctrl`+`h`     | Focus window to the left  |
-|   n   |     `Ctrl`+`j`     | Focus window below        |
-|   n   |     `Ctrl`+`k`     | Focus window above        |
-|   n   |     `Ctrl`+`l`     | Focus window to the right |
-|   n   |     `Ctrl`+`c`     | Close current window      |
+| Modes |    Keys    | Description               |
+| :---: | :--------: | ------------------------- |
+|   n   | `Ctrl`+`h` | Focus window to the left  |
+|   n   | `Ctrl`+`j` | Focus window below        |
+|   n   | `Ctrl`+`k` | Focus window above        |
+|   n   | `Ctrl`+`l` | Focus window to the right |
+|   n   | `Ctrl`+`c` | Close current window      |
 
 #### Files/Buffers
 
