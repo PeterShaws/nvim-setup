@@ -4,6 +4,9 @@
 
 * [Installation](#installation)
 * [Dependencies](#dependencies)
+* [Optional GUI](#optional-gui)
+* [Plugins used](#plugins-used)
+* [Colorschemes installed](#colorschemes-installed)
 * [Keymaps](#keymaps)
   * [General Keymaps](#general-keymaps)
     * [Insert mode navigation](#insert-mode-navigation)
@@ -12,11 +15,12 @@
     * [Text](#text)
   * [Plugin keymaps](#plugin-keymaps)
     * [`alpha` (Dashboard)](#alpha-dashboard)
-    * [`better-escape`](#better-escape)
+    * [`better-escape` (escape insert mode)](#better-escape-escape-insert-mode)
     * [`boole` (manipulate numbers and booleans)](#boole-manipulate-numbers-and-booleans)
     * [`bufferline` and `bufdelete` (buffer tabs)](#bufferline-and-bufdelete-buffer-tabs)
     * [`nvim-cmp` (autocompletion)](#nvim-cmp-autocompletion)
     * [`floaterm` (floating terminal)](#floaterm-floating-terminal)
+    * [`huez` (colorscheme picker)](#huez-colorscheme-picker)
     * [`gitsigns` (Git integration)](#gitsigns-git-integration)
     * [`lazygit` (Git client)](#lazygit-git-client)
     * [`leap` (document navigation)](#leap-document-navigation)
@@ -25,8 +29,6 @@
     * [`surround` (wrap text with pairs of characters)](#surround-wrap-text-with-pairs-of-characters)
     * [`telescope` (find things)](#telescope-find-things)
     * [`trouble` (diagnostics)](#trouble-diagnostics)
-* [Optional](#optional)
-* [Plugins used](#plugins-used)
 
 <!-- mtoc-end -->
 
@@ -45,13 +47,13 @@
 
 ## Dependencies
 
-1. `nodejs`/`npm` -- to download LSPs, formatters, etc.;
-2. `rg` -- for fuzzy finding;
-3. `fd` -- for finding files;
-4. `lazygit`.
+1. `nodejs`/`npm`, to download LSPs, formatters, etc.;
+2. `rg`, for fuzzy finding;
+3. `fd`, for finding files;
+4. `lazygit`, for interacting with Git.
 
    - `ydiff` (optional, a pager that can show diffs side-by-side). Configured
-     like so:
+     like so in the file `~/.config/lazygit/config.yml`:
 
      ```yaml
      gui:
@@ -62,13 +64,105 @@
          pager: ydiff -p cat -s --wrap --width={{columnWidth}}
      ```
 
-   - `~/.config/lazygit/config.yml`
+## Optional GUI
+
+Use [Neovide](https://neovide.dev) as a GUI for Neovim. Example configuration:
+
+`~/.config/neovide/config.toml`
+
+```toml
+[font]
+normal = { "family" = "JetBrainsMono Nerd Font", "style" = "ExtraLight" }
+size = 16
+hinting = "none"
+edging = "subpixelantialias"
+```
+
+This Neovim setup has keymaps for copying/pasting in Neovide while in terminal
+mode (useful e.g. for LazyGit).
+
+## Plugins used
+
+- [alpha-nvim](https://github.com/goolord/alpha-nvim)
+- [better-escape.nvim](https://github.com/max397574/better-escape.nvim)
+- [boole.nvim](https://github.com/nat-418/boole.nvim)
+- [bufdelete.nvim](https://github.com/famiu/bufdelete.nvim)
+- [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
+- [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
+- [cmp-path](https://github.com/hrsh7th/cmp-path)
+- [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
+- [Comment.nvim](https://github.com/numToStr/Comment.nvim)
+- [documentHighlight](https://github.com/textDocument/documentHighlight)
+- [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
+- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+- [hover](https://github.com/textDocument/hover)
+- [huez.nvim](https://github.com/vague2k/huez.nvim)
+- [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
+- [leap.nvim](https://github.com/ggandor/leap.nvim)
+- [lsp-colors.nvim](https://github.com/folke/lsp-colors.nvim)
+- [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
+- [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+- [markdown-toc.nvim](https://github.com/hedyhli/markdown-toc.nvim)
+- [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
+- [mason.nvim](https://github.com/williamboman/mason.nvim)
+- [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
+- [neodev.nvim](https://github.com/folke/neodev.nvim)
+- [noice.nvim](https://github.com/folke/noice.nvim)
+- [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim)
+- [nui.nvim](https://github.com/MunifTanjim/nui.nvim)
+- [nui.nvim](https://github.com/MunifTanjim/nui.nvim)
+- [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- [nvim-notify](https://github.com/rcarriga/nvim-notify)
+- [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
+- [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
+- [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
+- [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
+- [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
+- [nvim-window-picker](https://github.com/s1n7ax/nvim-window-picker)
+- [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+- [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+- [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+- [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+- [signatureHelp](https://github.com/textDocument/signatureHelp)
+- [telescope-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim)
+- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [trouble.nvim](https://github.com/folke/trouble.nvim)
+- [vim-floaterm](https://github.com/voldikss/vim-floaterm)
+- [vim-fugitive](https://github.com/tpope/vim-fugitive)
+- [vim-surround](https://github.com/tpope/vim-surround)
+- [which-key.nvim](https://github.com/folke/which-key.nvim)
+
+## Colorschemes installed
+
+- [ayu-vim](https://github.com/ayu-theme/ayu-vim)
+- [Base2Tone-nvim](https://github.com/atelierbram/Base2Tone-nvim)
+- [everforest-nvim](https://github.com/neanias/everforest-nvim)
+- [github-nvim-theme](https://github.com/projekt0n/github-nvim-theme)
+- [gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim)
+- [horizon.nvim](https://github.com/lunarvim/horizon.nvim)
+- [iceberg.vim](https://github.com/cocopon/iceberg.vim)
+- [kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim)
+- [monokai-pro.nvim](https://github.com/loctvl842/monokai-pro.nvim)
+- [neovim](https://github.com/rose-pine/neovim)
+- [nightfox.nvim](https://github.com/EdenEast/nightfox.nvim)
+- [nvim](https://github.com/catppuccin/nvim)
+- [papercolor-theme](https://github.com/NLKNguyen/papercolor-theme)
+- [space-vim-dark](https://github.com/liuchengxu/space-vim-dark)
+- [tairiki.nvim](https://github.com/deparr/tairiki.nvim)
+- [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
+- [vscode.nvim](https://github.com/Mofiqul/vscode.nvim)
+- [vscode_modern_theme.nvim](https://github.com/gmr458/vscode_modern_theme.nvim)
 
 ## Keymaps
 
-> Note: In the tables below, `Leader` means `Space` with this configuration.
-
 > Note: Most if not all of these should be covered by the `which-key` plugin.
+
+> Note: In the tables below, `Leader` means `Space` with this configuration.
 
 ### General Keymaps
 
@@ -129,7 +223,7 @@
 | :---: | :----------: | ----------- |
 |   n   | `Leader` `a` | Dashboard   |
 
-#### `better-escape`
+#### `better-escape` (escape insert mode)
 
 | Modes | Keys | Description        |
 | :---: | :--: | ------------------ |
@@ -186,7 +280,13 @@
 
 | Modes | Keys  | Description              |
 | :---: | :---: | ------------------------ |
-|   n   | `F12` | Toggle floating terminal |
+| n, t  | `F12` | Toggle floating terminal |
+
+#### `huez` (colorscheme picker)
+
+| Modes |     Keys      | Description  |
+| :---: | :-----------: | ------------ |
+|   n   | `Leader` `hs` | Colorschemes |
 
 #### `gitsigns` (Git integration)
 
@@ -296,65 +396,3 @@
 |   n   | `Leader` `xq` | Quickfix              |
 |   n   | `Leader` `xl` | Location list         |
 |   n   | `Leader` `xr` | LSP References        |
-
-## Optional
-
-Use [Neovide](https://neovide.dev) as a GUI for Neovim. Example configuration:
-
-`~/.config/neovide/config.toml`
-
-```toml
-[font]
-normal = { "family" = "JetBrainsMono Nerd Font", "style" = "ExtraLight" }
-size = 16
-hinting = "none"
-edging = "subpixelantialias"
-```
-
-This Neovim setup has keymaps for copying/pasting in Neovide while in terminal
-mode (useful e.g. for LazyGit).
-
-## Plugins used
-
-- [alpha-nvim](https://github.com/goolord/alpha-nvim)
-- [better-escape.nvim](https://github.com/max397574/better-escape.nvim)
-- [boole.nvim](https://github.com/nat-418/boole.nvim)
-- [bufdelete.nvim](https://github.com/famiu/bufdelete.nvim)
-- [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
-- [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
-- [cmp-path](https://github.com/hrsh7th/cmp-path)
-- [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
-- [Comment.nvim](https://github.com/numToStr/Comment.nvim)
-- [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
-- [github-nvim-theme](https://github.com/projekt0n/github-nvim-theme)
-- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
-- [lazy.nvim](https://github.com/folke/lazy.nvim)
-- [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
-- [leap.nvim](https://github.com/ggandor/leap.nvim)
-- [lsp-colors.nvim](https://github.com/folke/lsp-colors.nvim)
-- [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
-- [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
-- [markdown-toc.nvim](https://github.com/hedyhli/markdown-toc.nvim)
-- [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
-- [mason.nvim](https://github.com/williamboman/mason.nvim)
-- [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
-- [neodev.nvim](https://github.com/folke/neodev.nvim)
-- [noice.nvim](https://github.com/folke/noice.nvim)
-- [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim)
-- [nui.nvim](https://github.com/MunifTanjim/nui.nvim)
-- [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
-- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-- [nvim-notify](https://github.com/rcarriga/nvim-notify)
-- [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
-- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
-- [nvim-window-picker](https://github.com/s1n7ax/nvim-window-picker)
-- [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
-- [telescope-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim)
-- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-- [trouble.nvim](https://github.com/folke/trouble.nvim)
-- [vim-floaterm](https://github.com/voldikss/vim-floaterm)
-- [vim-fugitive](https://github.com/tpope/vim-fugitive)
-- [vim-surround](https://github.com/tpope/vim-surround)
-- [which-key.nvim](https://github.com/folke/which-key.nvim)
