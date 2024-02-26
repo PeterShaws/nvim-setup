@@ -50,32 +50,42 @@
 1. `nodejs`/`npm`, to download LSPs, formatters, etc.;
 2. `rg`, for fuzzy finding;
 3. `fd`, for finding files;
-4. `lazygit`, for interacting with Git.
+4. `lazygit`, for interacting with Git;
+5. `ydiff`, a pager that can show diffs side-by-side (optional). My current
+   LazyGit configuration (`~/.config/lazygit/config.yml`) is as follows:
 
-   - `ydiff` (optional, a pager that can show diffs side-by-side). Configured
-     like so in the file `~/.config/lazygit/config.yml`:
-
-     ```yaml
-     gui:
-       sidePanelWidth: 0.2
-     git:
-       paging:
-         colorArg: never
-         pager: ydiff -p cat -s --wrap --width={{columnWidth}}
-     ```
+   ```yaml
+   gui:
+     nerdFontsVersion: 3
+     sidePanelWidth: 0.2
+     theme:
+       selectedLineBgColor:
+         - "#444444"
+   git:
+     paging:
+       colorArg: never
+       pager: ydiff -p cat -s --wrap --width={{columnWidth}}
+   os:
+     editPreset: "nvim"
+   ```
 
 ## Optional GUI
 
-Use [Neovide](https://neovide.dev) as a GUI for Neovim. Example configuration:
-
-`~/.config/neovide/config.toml`
+Use [Neovide](https://neovide.dev) as a GUI for Neovim. My current Neovide
+configuration (`~/.config/neovide/config.toml`) is as follows:
 
 ```toml
 [font]
-normal = { "family" = "JetBrainsMono Nerd Font", "style" = "ExtraLight" }
+normal = { "family" = "JetBrainsMono Nerd Font", "style" = "Normal" }
+bold = { "family" = "JetBrainsMono Nerd Font", "style" = "Bold" }
+italic = { "family" = "JetBrainsMono Nerd Font", "style" = "Italic" }
+bold_italic = { "family" = "JetBrainsMono Nerd Font", "style" = "Bold Italic" }
 size = 16
 hinting = "none"
 edging = "subpixelantialias"
+
+[font.features]
+"JetBrainsMono Nerd Font" = ["+zero"]
 ```
 
 This Neovim setup has keymaps for copying/pasting in Neovide while in terminal
