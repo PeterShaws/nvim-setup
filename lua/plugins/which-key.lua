@@ -15,8 +15,16 @@ return {
             ['<Leader>t'] = { name = 'Toggle', _ = 'which_key_ignore' },
             ['<Leader>w'] = { name = 'Workspace', _ = 'which_key_ignore' },
             ['<Leader>x'] = { name = 'Trouble', _ = 'which_key_ignore' },
-            ['['] = { name = 'Previous', c = 'Previous changed hunk' },
-            [']'] = { name = 'Next', c = 'Next changed hunk' },
+            ['['] = {
+                name = 'Previous',
+                c = 'Previous changed hunk',
+                t = "Previous to-do comment"
+            },
+            [']'] = {
+                name = 'Next',
+                c = 'Next changed hunk',
+                t = "Next to-do comment"
+            },
         })
         which_key.register({
             ['<Leader>c'] = { name = 'Code', _ = 'which_key_ignore' },

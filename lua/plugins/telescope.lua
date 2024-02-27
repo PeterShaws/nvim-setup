@@ -22,7 +22,7 @@ return {
             u.map('n', '<Leader>fb', builtin.buffers, 'Open buffers')
             u.map('n', '<Leader>fh', builtin.help_tags, 'Help tags')
             u.map('n', '<Leader>fk', builtin.keymaps, 'Key maps')
-            u.map('n', '<Leader>ft', builtin.treesitter, 'Treesitter symbols')
+            u.map('n', '<Leader>ft', [[:TodoTelescope<CR>]], 'To-do list')
             u.map('n', '<Leader>fd', builtin.diagnostics, 'Diagnostics')
             u.map('n', '<Leader>f/', function()
                 builtin.current_buffer_fuzzy_find(

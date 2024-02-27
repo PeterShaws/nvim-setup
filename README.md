@@ -28,6 +28,7 @@
     * [`neo-tree` (file explorer)](#neo-tree-file-explorer)
     * [`surround` (wrap text with pairs of characters)](#surround-wrap-text-with-pairs-of-characters)
     * [`telescope` (find things)](#telescope-find-things)
+    * [`todo-comments` (to-do tags in comments)](#todo-comments-to-do-tags-in-comments)
     * [`trouble` (diagnostics)](#trouble-diagnostics)
 
 <!-- mtoc-end -->
@@ -51,8 +52,9 @@
 2. `rg`, for fuzzy finding;
 3. `fd`, for finding files;
 4. `lazygit`, for interacting with Git;
-5. `ydiff`, a pager that can show diffs side-by-side (optional). My current
-   LazyGit configuration (`~/.config/lazygit/config.yml`) is as follows:
+5. `ydiff`, a pager that can show diffs side-by-side (optional).
+
+   > `~/.config/lazygit/config.yml`
 
    ```yaml
    gui:
@@ -71,8 +73,9 @@
 
 ## GUI (Optional)
 
-Use [Neovide](https://neovide.dev) as a GUI for Neovim. My current Neovide
-configuration (`~/.config/neovide/config.toml`) is as follows:
+Use [Neovide](https://neovide.dev) as a GUI for Neovim.
+
+> `~/.config/neovide/config.toml`
 
 ```toml
 [font]
@@ -102,7 +105,6 @@ mode (useful e.g. for LazyGit).
 - [cmp-path](https://github.com/hrsh7th/cmp-path)
 - [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim)
-- [documentHighlight](https://github.com/textDocument/documentHighlight)
 - [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [huez.nvim](https://github.com/vague2k/huez.nvim)
@@ -131,6 +133,7 @@ mode (useful e.g. for LazyGit).
 - [signatureHelp](https://github.com/textDocument/signatureHelp)
 - [telescope-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 - [trouble.nvim](https://github.com/folke/trouble.nvim)
 - [vim-floaterm](https://github.com/voldikss/vim-floaterm)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
@@ -392,6 +395,13 @@ mode (useful e.g. for LazyGit).
 |   n   | `Leader` `f/` | Search current buffer |
 |   n   | `Leader` `fm` | Messages              |
 |   n   | `Leader` `fT` | Themes                |
+
+#### `todo-comments` (to-do tags in comments)
+
+| Modes | Keys | Description            |
+| :---: | :--: | ---------------------- |
+|   n   | `]t` | Next to-do comment     |
+|   n   | `[t` | Previous to-do comment |
 
 #### `trouble` (diagnostics)
 
