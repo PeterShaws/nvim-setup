@@ -1,1 +1,1 @@
-onedark
+ayu-mirage
