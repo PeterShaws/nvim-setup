@@ -107,7 +107,7 @@ return {
                     map('n', '<Leader>lD', builtin.lsp_type_definitions, 'Type definition')
                     map('n', '<Leader>ls', builtin.lsp_document_symbols, 'Document Symbols')
                     map('n', '<Leader>lw', builtin.lsp_dynamic_workspace_symbols, 'Workspace Symbols')
-                    map('n', '<Leader>lf', buf.format, 'Format Buffer')
+                    map('n', '<Leader>lf', function() buf.format({ timeout_ms = 2000 }) end, 'Format Buffer')
                     map('n', 'K', buf.hover, 'Hover documentation')
                     map('n', '<C-k>', buf.signature_help, 'Signature documentation')
                     map('n', 'gD', buf.declaration, 'Go to declaration')
