@@ -329,9 +329,9 @@ mode (useful e.g. for LazyGit).
 
 |  Modes  | Keys | Description      |
 | :-----: | :--: | ---------------- |
-| n, x, o |  s   | Leap forward     |
-| n, x, o |  S   | Leap backward    |
-| n, x, o |  gs  | Leap from window |
+| n, x, o | `s`  | Leap forward     |
+| n, x, o | `S`  | Leap backward    |
+| n, x, o | `gs` | Leap from window |
 
 #### `nvim-lspconfig` (language server)
 
