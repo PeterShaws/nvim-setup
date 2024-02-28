@@ -187,24 +187,21 @@ mode (useful e.g. for LazyGit).
 
 #### Window navigation
 
-| Modes |        Keys        | Description               |
-| :---: | :----------------: | ------------------------- |
-|   n   |     `Ctrl`+`c`     | Close current window      |
-|   n   |     `Ctrl`+`h`     | Focus window to the left  |
-|   n   |     `Ctrl`+`j`     | Focus window below        |
-|   n   |     `Ctrl`+`k`     | Focus window above        |
-|   n   |     `Ctrl`+`l`     | Focus window to the right |
-|   n   | `Ctrl`+`Shift`+`H` | Move window to the left   |
-|   n   | `Ctrl`+`Shift`+`J` | Move window below         |
-|   n   | `Ctrl`+`Shift`+`K` | Move window above         |
-|   n   | `Ctrl`+`Shift`+`L` | Move window to the right  |
-|   n   |     `Ctrl`+`r`     | Swap windows              |
-|   n   |     `Ctrl`+`<`     | Decrease window width     |
-|   n   |     `Ctrl`+`>`     | Increase window width     |
-|   n   |     `Ctrl`+`-`     | Decrease window height    |
-|   n   |     `Ctrl`+`+`     | Increase window height    |
-|   n   |     `Ctrl`+`=`     | Make windows even         |
-|   n   |     `Ctrl`+`_`     | Maximize window           |
+| Modes |        Keys        | Description                  |
+| :---: | :----------------: | ---------------------------- |
+|   n   |     `Ctrl`+`c`     | Close current window         |
+|   n   |     `Ctrl`+`h`     | Focus window to the left     |
+|   n   |     `Ctrl`+`j`     | Focus window below           |
+|   n   |     `Ctrl`+`k`     | Focus window above           |
+|   n   |     `Ctrl`+`l`     | Focus window to the right    |
+|   n   | `Ctrl`+`Shift`+`H` | Move window to the left      |
+|   n   | `Ctrl`+`Shift`+`J` | Move window below            |
+|   n   | `Ctrl`+`Shift`+`K` | Move window above            |
+|   n   | `Ctrl`+`Shift`+`L` | Move window to the right     |
+|   n   |     `Ctrl`+`<`     | Decrease window width        |
+|   n   |     `Ctrl`+`>`     | Increase window width        |
+|   n   |     `Ctrl`+`-`     | Decrease window height       |
+|   n   |     `Ctrl`+`+`     | Increase window height       |
 
 #### Files/Buffers
 
@@ -231,6 +228,7 @@ mode (useful e.g. for LazyGit).
 | n, x  |        `x`         | Delete                               |
 | n, x  |        `X`         | Delete                               |
 |   n   |     `Alt`+`w`      | Toggle word wrap                     |
+|   n   | `Alt`+`Shift`+`P`  | Toggle whitespace                    |
 |   n   |   `Leader` `cq`    | Double quotes to single              |
 |   n   |   `Leader` `cQ`    | Single quotes to double              |
 |   n   |   `Leader` `ci`    | Reindent file                        |

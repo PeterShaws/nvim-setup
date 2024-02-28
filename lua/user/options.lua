@@ -20,9 +20,12 @@ opt.encoding = 'utf8'     -- String encoding to use
 opt.fileencoding = 'utf8' -- File encoding to use
 
 -- Theme
+---@diagnostic disable-next-line: assign-type-mismatch
 opt.fillchars = 'stl: ,fold: ' -- Hide current status line, fold fill chars
-opt.syntax = 'ON'              -- Allow syntax highlighting
-opt.termguicolors = true       -- If term supports ui color then enable
+---@diagnostic disable-next-line: assign-type-mismatch
+opt.listchars = 'tab:――⟶,trail:·,nbsp:○,extends:⏵,precedes:⏴,eol:¶'
+opt.syntax = 'ON'        -- Allow syntax highlighting
+opt.termguicolors = true -- If term supports ui color then enable
 
 -- Whitespace
 opt.expandtab = true -- Use spaces instead of tabs

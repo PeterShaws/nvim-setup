@@ -20,13 +20,10 @@ u.map('n', '<C-S-H>', [[<C-w>H]], 'Move window to the left')
 u.map('n', '<C-S-J>', [[<C-w>J]], 'Move window below')
 u.map('n', '<C-S-K>', [[<C-w>K]], 'Move window above')
 u.map('n', '<C-S-L>', [[<C-w>L]], 'Move window to the right')
-u.map('n', '<C-r>', [[<C-w>r]], 'Swap windows')
 u.map('n', '<C-lt>', [[<C-w><]], 'Decrease window width')
 u.map('n', '<C-gt>', [[<C-w>>]], 'Increase window width')
 u.map('n', '<C-->', [[<C-w>-]], 'Decrease window height')
 u.map('n', '<C-+>', [[<C-w>+]], 'Increase window height')
-u.map('n', '<C-=>', [[<C-w>=]], 'Make windows even')
-u.map('n', '<C-_>', [[<C-w>_]], 'Maximize window')
 
 -- Files/Buffers
 u.map('n', '<Leader>bd', [[:cd %:h<CR>]], 'Change to current buffer’s directory')
@@ -47,25 +44,8 @@ u.map('t', '<C-S-V>', [["+p]], 'Paste from clipboard into terminal')
 u.map({ 'n', 'x' }, 'x', [["_x]], 'Delete')
 u.map({ 'n', 'x' }, 'X', [["_d]], 'Delete')
 u.map('n', '<A-w>', [[:set wrap!<CR>]], 'Toggle word wrap')
+u.map('n', '<A-P>', [[:set list!<CR>]], 'Toggle whitespace')
 u.map('n', '<Leader>cq', [[:%s/"/'/g<CR>]], 'Double quotes to single')
 u.map('n', '<Leader>cQ', [[:%s/'/"/g<CR>]], 'Single quotes to double')
 u.map('n', '<Leader>ci', [[gg=G]], 'Reindent')
 u.map('n', '<Esc>', [[:noh<CR>]], 'Clear search highlight')
-
--- Autocommands
-local augroup = vim.api.nvim_create_augroup('user_cmds', { clear = true })
--- Quit help and man windows with just <q>
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'help', 'man' },
-    group = augroup,
-    desc = 'Use q to close the window',
-    command = 'nnoremap <buffer> q <cmd>quit<CR>',
-})
--- Briefly highlight yanked text
-vim.api.nvim_create_autocmd('TextYankPost', {
-    group = augroup,
-    desc = 'Highlight on yank',
-    callback = function()
-        vim.highlight.on_yank({ higroup = 'Visual', timeout = 200 })
-    end,
-})

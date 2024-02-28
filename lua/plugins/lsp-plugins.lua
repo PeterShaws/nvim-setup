@@ -31,6 +31,7 @@ return {
         'williamboman/mason.nvim',
         opts = {
             ui = {
+                border = 'rounded',
                 icons = {
                     package_installed   = '●', -- '✓',
                     package_pending     = '◌', -- '➜',
@@ -84,15 +85,15 @@ return {
             -- after the language server attaches to the current buffer
             vim.api.nvim_create_autocmd('LspAttach', {
                 group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-                callback = function(ev)
+                callback = function(event)
                     -- Enable completion triggered by <c-x><c-o>
-                    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+                    vim.bo[event.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
                     -- Local buffer mappings.
                     -- See `:help vim.lsp.*` for documentation on any of the below functions
                     local map = function(mode, key, handler, desc)
                         vim.keymap.set(mode, key, handler, {
-                            buffer = ev.buf, desc = desc, silent = true
+                            buffer = event.buf, desc = desc, silent = true
                         })
                     end
 
@@ -107,7 +108,7 @@ return {
                     map('n', '<Leader>lD', builtin.lsp_type_definitions, 'Type definition')
                     map('n', '<Leader>ls', builtin.lsp_document_symbols, 'Document Symbols')
                     map('n', '<Leader>lw', builtin.lsp_dynamic_workspace_symbols, 'Workspace Symbols')
-                    map('n', '<Leader>lf', function() buf.format({ timeout_ms = 2000 }) end, 'Format Buffer')
+                    map('n', '<Leader>lf', function() buf.format({ timeout_ms = 5000 }) end, 'Format Buffer')
                     map('n', 'K', buf.hover, 'Hover documentation')
                     map('n', '<C-k>', buf.signature_help, 'Signature documentation')
                     map('n', 'gD', buf.declaration, 'Go to declaration')
@@ -116,7 +117,7 @@ return {
                     map('n', '<Leader>wl', function() print(vim.inspect(buf.list_workspace_folders())) end,
                         'List workspace folders')
 
-                    highlight_symbol(ev)
+                    highlight_symbol(event)
                 end,
             })
 
