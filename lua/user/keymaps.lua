@@ -11,11 +11,22 @@ u.map('i', '<A-k>', [[<Up>]], 'Move cursor up')
 u.map('i', '<A-l>', [[<Right>]], 'Move cursor right')
 
 -- Window navigation
+u.map('n', '<C-c>', [[<C-w>c]], 'Close current window')
 u.map('n', '<C-h>', [[<C-w>h]], 'Focus window to the left')
 u.map('n', '<C-j>', [[<C-w>j]], 'Focus window below')
 u.map('n', '<C-k>', [[<C-w>k]], 'Focus window above')
 u.map('n', '<C-l>', [[<C-w>l]], 'Focus window to the right')
-u.map('n', '<C-c>', [[<C-w>c]], 'Close current window')
+u.map('n', '<C-S-H>', [[<C-w>H]], 'Move window to the left')
+u.map('n', '<C-S-J>', [[<C-w>J]], 'Move window below')
+u.map('n', '<C-S-K>', [[<C-w>K]], 'Move window above')
+u.map('n', '<C-S-L>', [[<C-w>L]], 'Move window to the right')
+u.map('n', '<C-r>', [[<C-w>r]], 'Swap windows')
+u.map('n', '<C-lt>', [[<C-w><]], 'Decrease window width')
+u.map('n', '<C-gt>', [[<C-w>>]], 'Increase window width')
+u.map('n', '<C-->', [[<C-w>-]], 'Decrease window height')
+u.map('n', '<C-+>', [[<C-w>+]], 'Increase window height')
+u.map('n', '<C-=>', [[<C-w>=]], 'Make windows even')
+u.map('n', '<C-_>', [[<C-w>_]], 'Maximize window')
 
 -- Files/Buffers
 u.map('n', '<Leader>bd', [[:cd %:h<CR>]], 'Change to current buffer’s directory')

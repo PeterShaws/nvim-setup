@@ -187,13 +187,24 @@ mode (useful e.g. for LazyGit).
 
 #### Window navigation
 
-| Modes |    Keys    | Description               |
-| :---: | :--------: | ------------------------- |
-|   n   | `Ctrl`+`h` | Focus window to the left  |
-|   n   | `Ctrl`+`j` | Focus window below        |
-|   n   | `Ctrl`+`k` | Focus window above        |
-|   n   | `Ctrl`+`l` | Focus window to the right |
-|   n   | `Ctrl`+`c` | Close current window      |
+| Modes |        Keys        | Description               |
+| :---: | :----------------: | ------------------------- |
+|   n   |     `Ctrl`+`c`     | Close current window      |
+|   n   |     `Ctrl`+`h`     | Focus window to the left  |
+|   n   |     `Ctrl`+`j`     | Focus window below        |
+|   n   |     `Ctrl`+`k`     | Focus window above        |
+|   n   |     `Ctrl`+`l`     | Focus window to the right |
+|   n   | `Ctrl`+`Shift`+`H` | Move window to the left   |
+|   n   | `Ctrl`+`Shift`+`J` | Move window below         |
+|   n   | `Ctrl`+`Shift`+`K` | Move window above         |
+|   n   | `Ctrl`+`Shift`+`L` | Move window to the right  |
+|   n   |     `Ctrl`+`r`     | Swap windows              |
+|   n   |     `Ctrl`+`<`     | Decrease window width     |
+|   n   |     `Ctrl`+`>`     | Increase window width     |
+|   n   |     `Ctrl`+`-`     | Decrease window height    |
+|   n   |     `Ctrl`+`+`     | Increase window height    |
+|   n   |     `Ctrl`+`=`     | Make windows even         |
+|   n   |     `Ctrl`+`_`     | Maximize window           |
 
 #### Files/Buffers
 
@@ -390,7 +401,7 @@ mode (useful e.g. for LazyGit).
 |   n   | `Leader` `fh` | Help tags             |
 |   n   | `Leader` `fk` | Key maps              |
 |   n   | `Leader` `fc` | Colorschemes          |
-|   n   | `Leader` `ft` | Treesitter symbols    |
+|   n   | `Leader` `ft` | To-do list            |
 |   n   | `Leader` `fd` | Diagnostics           |
 |   n   | `Leader` `f/` | Search current buffer |
 |   n   | `Leader` `fm` | Messages              |
@@ -413,3 +424,4 @@ mode (useful e.g. for LazyGit).
 |   n   | `Leader` `xq` | Quickfix              |
 |   n   | `Leader` `xl` | Location list         |
 |   n   | `Leader` `xr` | LSP References        |
+|   n   | `Leader` `xt` | LSP References        |
