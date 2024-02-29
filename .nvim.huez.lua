@@ -1,1 +1,1 @@
-onedark
+vscode_modern

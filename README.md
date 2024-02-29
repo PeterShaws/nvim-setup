@@ -95,8 +95,11 @@ This Neovim setup has keymaps for copying/pasting in Neovide while in terminal
 mode (useful e.g. for LazyGit).
 
 ## Plugins used
+<!-- rg --no-heading -N -o "[^/]+/[^/]+" lua/plugins | rg -v colorscheme | rg -v textDocument | awk -F ":" "{print $2}" | tr -d "’" | sort -u -->
 
 - [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
+- [brenoprata10/nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors)
+- [davidmh/cspell.nvim](https://github.com/davidmh/cspell.nvim)
 - [famiu/bufdelete.nvim](https://github.com/famiu/bufdelete.nvim)
 - [folke/lsp-colors.nvim](https://github.com/folke/lsp-colors.nvim)
 - [folke/neodev.nvim](https://github.com/folke/neodev.nvim)
@@ -131,7 +134,6 @@ mode (useful e.g. for LazyGit).
 - [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [s1n7ax/nvim-window-picker](https://github.com/s1n7ax/nvim-window-picker)
 - [saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
-- [textDocument/signatureHelp](https://github.com/textDocument/signatureHelp)
 - [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [tpope/vim-surround](https://github.com/tpope/vim-surround)
 - [vague2k/huez.nvim](https://github.com/vague2k/huez.nvim)
@@ -141,6 +143,7 @@ mode (useful e.g. for LazyGit).
 - [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 
 ## Colorschemes installed
+<!-- rg --no-heading -N -o "[^/]+/[^/]+" lua/plugins | rg colorschemes | rg -v textDocument | awk -F ":" "{print $2}" | tr -d "’" | sort -u -->
 
 - [AlexvZyl/nordic.nvim](https://github.com/AlexvZyl/nordic.nvim)
 - [atelierbram/Base2Tone-nvim](https://github.com/atelierbram/Base2Tone-nvim)
