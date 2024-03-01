@@ -165,6 +165,7 @@ read ! rg --no-heading -N -o "'[^/]+/[^/]+'" "lua/plugins" | rg "colorschemes" |
 - [`kepano/flexoki-neovim`](https://github.com/kepano/flexoki-neovim)
 - [`liuchengxu/space-vim-dark`](https://github.com/liuchengxu/space-vim-dark)
 - [`loctvl842/monokai-pro.nvim`](https://github.com/loctvl842/monokai-pro.nvim)
+- [`lunacookies/vim-colors-xcode`](https://github.com/lunacookies/vim-colors-xcode)
 - [`lunarvim/horizon.nvim`](https://github.com/lunarvim/horizon.nvim)
 - [`Mofiqul/vscode.nvim`](https://github.com/Mofiqul/vscode.nvim)
 - [`neanias/everforest-nvim`](https://github.com/neanias/everforest-nvim)

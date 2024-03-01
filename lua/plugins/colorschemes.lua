@@ -24,4 +24,5 @@ return {
     { 'sainnhe/sonokai',                 lazy = false, priority = 1000 },
     { 'savq/melange-nvim',               lazy = false, priority = 1000 },
     { 'Shatur/neovim-ayu',               lazy = false, priority = 1000 },
+    { 'lunacookies/vim-colors-xcode',    lazy = false, priority = 1000 },
 }
