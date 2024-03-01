@@ -96,78 +96,87 @@ mode (useful e.g. for LazyGit).
 
 ## Plugins used
 
-* [`akinsho/bufferline.nvim`](https://github.com/akinsho/bufferline.nvim)
-* [`brenoprata10/nvim-highlight-colors`](https://github.com/brenoprata10/nvim-highlight-colors)
-* [`davidmh/cspell.nvim`](https://github.com/davidmh/cspell.nvim)
-* [`famiu/bufdelete.nvim`](https://github.com/famiu/bufdelete.nvim)
-* [`folke/lsp-colors.nvim`](https://github.com/folke/lsp-colors.nvim)
-* [`folke/neodev.nvim`](https://github.com/folke/neodev.nvim)
-* [`folke/noice.nvim`](https://github.com/folke/noice.nvim)
-* [`folke/todo-comments.nvim`](https://github.com/folke/todo-comments.nvim)
-* [`folke/trouble.nvim`](https://github.com/folke/trouble.nvim)
-* [`folke/which-key.nvim`](https://github.com/folke/which-key.nvim)
-* [`ggandor/leap.nvim`](https://github.com/ggandor/leap.nvim)
-* [`goolord/alpha-nvim`](https://github.com/goolord/alpha-nvim)
-* [`hedyhli/markdown-toc.nvim`](https://github.com/hedyhli/markdown-toc.nvim)
-* [`hrsh7th/cmp-nvim-lsp`](https://github.com/hrsh7th/cmp-nvim-lsp)
-* [`hrsh7th/cmp-path`](https://github.com/hrsh7th/cmp-path)
-* [`hrsh7th/nvim-cmp`](https://github.com/hrsh7th/nvim-cmp)
-* [`kdheepak/lazygit.nvim`](https://github.com/kdheepak/lazygit.nvim)
-* [`L3MON4D3/LuaSnip`](https://github.com/L3MON4D3/LuaSnip)
-* [`lewis6991/gitsigns.nvim`](https://github.com/lewis6991/gitsigns.nvim)
-* [`max397574/better-escape.nvim`](https://github.com/max397574/better-escape.nvim)
-* [`MunifTanjim/nui.nvim`](https://github.com/MunifTanjim/nui.nvim)
-* [`nat-418/boole.nvim`](https://github.com/nat-418/boole.nvim)
-* [`neovim/nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig)
-* [`numToStr/Comment.nvim`](https://github.com/numToStr/Comment.nvim)
-* [`nvim-lua/plenary.nvim`](https://github.com/nvim-lua/plenary.nvim)
-* [`nvim-lualine/lualine.nvim`](https://github.com/nvim-lualine/lualine.nvim)
-* [`nvim-neo-tree/neo-tree.nvim`](https://github.com/nvim-neo-tree/neo-tree.nvim)
-* [`nvim-telescope/telescope-ui-select.nvim`](https://github.com/nvim-telescope/telescope-ui-select.nvim)
-* [`nvim-telescope/telescope.nvim`](https://github.com/nvim-telescope/telescope.nvim)
-* [`nvim-tree/nvim-web-devicons`](https://github.com/nvim-tree/nvim-web-devicons)
-* [`nvim-treesitter/nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter)
-* [`nvim-treesitter/nvim-treesitter-textobjects`](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
-* [`nvimtools/none-ls.nvim`](https://github.com/nvimtools/none-ls.nvim)
-* [`rafamadriz/friendly-snippets`](https://github.com/rafamadriz/friendly-snippets)
-* [`rcarriga/nvim-notify`](https://github.com/rcarriga/nvim-notify)
-* [`s1n7ax/nvim-window-picker`](https://github.com/s1n7ax/nvim-window-picker)
-* [`saadparwaiz1/cmp_luasnip`](https://github.com/saadparwaiz1/cmp_luasnip)
-* [`tpope/vim-fugitive`](https://github.com/tpope/vim-fugitive)
-* [`tpope/vim-surround`](https://github.com/tpope/vim-surround)
-* [`vague2k/huez.nvim`](https://github.com/vague2k/huez.nvim)
-* [`voldikss/vim-floaterm`](https://github.com/voldikss/vim-floaterm)
-* [`williamboman/mason-lspconfig.nvim`](https://github.com/williamboman/mason-lspconfig.nvim)
-* [`williamboman/mason.nvim`](https://github.com/williamboman/mason.nvim)
-* [`windwp/nvim-autopairs`](https://github.com/windwp/nvim-autopairs)
+<!--
+read ! rg --no-heading -N -o "'[^/]+/[^/]+'" "lua/plugins" | rg -v "colorschemes" | rg -v "textDocument" | cut -d ':' -f 2 | tr -d "'" | sort -u
+-->
+
+- [`akinsho/bufferline.nvim`](https://github.com/akinsho/bufferline.nvim)
+- [`brenoprata10/nvim-highlight-colors`](https://github.com/brenoprata10/nvim-highlight-colors)
+- [`davidmh/cspell.nvim`](https://github.com/davidmh/cspell.nvim)
+- [`famiu/bufdelete.nvim`](https://github.com/famiu/bufdelete.nvim)
+- [`folke/lsp-colors.nvim`](https://github.com/folke/lsp-colors.nvim)
+- [`folke/neodev.nvim`](https://github.com/folke/neodev.nvim)
+- [`folke/noice.nvim`](https://github.com/folke/noice.nvim)
+- [`folke/todo-comments.nvim`](https://github.com/folke/todo-comments.nvim)
+- [`folke/trouble.nvim`](https://github.com/folke/trouble.nvim)
+- [`folke/which-key.nvim`](https://github.com/folke/which-key.nvim)
+- [`ggandor/leap.nvim`](https://github.com/ggandor/leap.nvim)
+- [`goolord/alpha-nvim`](https://github.com/goolord/alpha-nvim)
+- [`hedyhli/markdown-toc.nvim`](https://github.com/hedyhli/markdown-toc.nvim)
+- [`hrsh7th/cmp-nvim-lsp`](https://github.com/hrsh7th/cmp-nvim-lsp)
+- [`hrsh7th/cmp-path`](https://github.com/hrsh7th/cmp-path)
+- [`hrsh7th/nvim-cmp`](https://github.com/hrsh7th/nvim-cmp)
+- [`kdheepak/lazygit.nvim`](https://github.com/kdheepak/lazygit.nvim)
+- [`L3MON4D3/LuaSnip`](https://github.com/L3MON4D3/LuaSnip)
+- [`lewis6991/gitsigns.nvim`](https://github.com/lewis6991/gitsigns.nvim)
+- [`max397574/better-escape.nvim`](https://github.com/max397574/better-escape.nvim)
+- [`MunifTanjim/nui.nvim`](https://github.com/MunifTanjim/nui.nvim)
+- [`nat-418/boole.nvim`](https://github.com/nat-418/boole.nvim)
+- [`neovim/nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig)
+- [`numToStr/Comment.nvim`](https://github.com/numToStr/Comment.nvim)
+- [`nvim-lua/plenary.nvim`](https://github.com/nvim-lua/plenary.nvim)
+- [`nvim-lualine/lualine.nvim`](https://github.com/nvim-lualine/lualine.nvim)
+- [`nvim-neo-tree/neo-tree.nvim`](https://github.com/nvim-neo-tree/neo-tree.nvim)
+- [`nvim-telescope/telescope-ui-select.nvim`](https://github.com/nvim-telescope/telescope-ui-select.nvim)
+- [`nvim-telescope/telescope.nvim`](https://github.com/nvim-telescope/telescope.nvim)
+- [`nvim-tree/nvim-web-devicons`](https://github.com/nvim-tree/nvim-web-devicons)
+- [`nvim-treesitter/nvim-treesitter-textobjects`](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
+- [`nvim-treesitter/nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter)
+- [`nvimdev/lspsaga.nvim`](https://github.com/nvimdev/lspsaga.nvim)
+- [`nvimtools/none-ls.nvim`](https://github.com/nvimtools/none-ls.nvim)
+- [`rafamadriz/friendly-snippets`](https://github.com/rafamadriz/friendly-snippets)
+- [`rcarriga/nvim-notify`](https://github.com/rcarriga/nvim-notify)
+- [`s1n7ax/nvim-window-picker`](https://github.com/s1n7ax/nvim-window-picker)
+- [`saadparwaiz1/cmp_luasnip`](https://github.com/saadparwaiz1/cmp_luasnip)
+- [`tpope/vim-fugitive`](https://github.com/tpope/vim-fugitive)
+- [`tpope/vim-surround`](https://github.com/tpope/vim-surround)
+- [`vague2k/huez.nvim`](https://github.com/vague2k/huez.nvim)
+- [`voldikss/vim-floaterm`](https://github.com/voldikss/vim-floaterm)
+- [`williamboman/mason-lspconfig.nvim`](https://github.com/williamboman/mason-lspconfig.nvim)
+- [`williamboman/mason.nvim`](https://github.com/williamboman/mason.nvim)
+- [`windwp/nvim-autopairs`](https://github.com/windwp/nvim-autopairs)
 
 ## Colorschemes installed
 
-* [`AlexvZyl/nordic.nvim`](https://github.com/AlexvZyl/nordic.nvim)
-* [`atelierbram/Base2Tone-nvim`](https://github.com/atelierbram/Base2Tone-nvim)
-* [`catppuccin/nvim`](https://github.com/catppuccin/nvim)
-* [`cocopon/iceberg.vim`](https://github.com/cocopon/iceberg.vim)
-* [`deparr/tairiki.nvim`](https://github.com/deparr/tairiki.nvim)
-* [`EdenEast/nightfox.nvim`](https://github.com/EdenEast/nightfox.nvim)
-* [`ellisonleao/gruvbox.nvim`](https://github.com/ellisonleao/gruvbox.nvim)
-* [`folke/tokyonight.nvim`](https://github.com/folke/tokyonight.nvim)
-* [`gmr458/vscode_modern_theme.nvim`](https://github.com/gmr458/vscode_modern_theme.nvim)
-* [`jacoborus/tender.vim`](https://github.com/jacoborus/tender.vim)
-* [`kepano/flexoki-neovim`](https://github.com/kepano/flexoki-neovim)
-* [`liuchengxu/space-vim-dark`](https://github.com/liuchengxu/space-vim-dark)
-* [`loctvl842/monokai-pro.nvim`](https://github.com/loctvl842/monokai-pro.nvim)
-* [`lunarvim/horizon.nvim`](https://github.com/lunarvim/horizon.nvim)
-* [`Mofiqul/vscode.nvim`](https://github.com/Mofiqul/vscode.nvim)
-* [`neanias/everforest-nvim`](https://github.com/neanias/everforest-nvim)
-* [`NLKNguyen/papercolor-theme`](https://github.com/NLKNguyen/papercolor-theme)
-* [`olimorris/onedarkpro.nvim`](https://github.com/olimorris/onedarkpro.nvim)
-* [`patstockwell/vim-monokai-tasty`](https://github.com/patstockwell/vim-monokai-tasty)
-* [`projekt0n/github-nvim-theme`](https://github.com/projekt0n/github-nvim-theme)
-* [`rebelot/kanagawa.nvim`](https://github.com/rebelot/kanagawa.nvim)
-* [`rose-pine/neovim`](https://github.com/rose-pine/neovim)
-* [`sainnhe/sonokai`](https://github.com/sainnhe/sonokai)
-* [`savq/melange-nvim`](https://github.com/savq/melange-nvim)
-* [`Shatur/neovim-ayu`](https://github.com/Shatur/neovim-ayu)
+<!--
+read ! rg --no-heading -N -o "'[^/]+/[^/]+'" "lua/plugins" | rg "colorschemes" | cut -d ':' -f 2 | tr -d "'" | sort -u
+-->
+
+- [`AlexvZyl/nordic.nvim`](https://github.com/AlexvZyl/nordic.nvim)
+- [`atelierbram/Base2Tone-nvim`](https://github.com/atelierbram/Base2Tone-nvim)
+- [`catppuccin/nvim`](https://github.com/catppuccin/nvim)
+- [`cocopon/iceberg.vim`](https://github.com/cocopon/iceberg.vim)
+- [`deparr/tairiki.nvim`](https://github.com/deparr/tairiki.nvim)
+- [`EdenEast/nightfox.nvim`](https://github.com/EdenEast/nightfox.nvim)
+- [`ellisonleao/gruvbox.nvim`](https://github.com/ellisonleao/gruvbox.nvim)
+- [`folke/tokyonight.nvim`](https://github.com/folke/tokyonight.nvim)
+- [`gmr458/vscode_modern_theme.nvim`](https://github.com/gmr458/vscode_modern_theme.nvim)
+- [`jacoborus/tender.vim`](https://github.com/jacoborus/tender.vim)
+- [`kepano/flexoki-neovim`](https://github.com/kepano/flexoki-neovim)
+- [`liuchengxu/space-vim-dark`](https://github.com/liuchengxu/space-vim-dark)
+- [`loctvl842/monokai-pro.nvim`](https://github.com/loctvl842/monokai-pro.nvim)
+- [`lunarvim/horizon.nvim`](https://github.com/lunarvim/horizon.nvim)
+- [`Mofiqul/vscode.nvim`](https://github.com/Mofiqul/vscode.nvim)
+- [`neanias/everforest-nvim`](https://github.com/neanias/everforest-nvim)
+- [`NLKNguyen/papercolor-theme`](https://github.com/NLKNguyen/papercolor-theme)
+- [`olimorris/onedarkpro.nvim`](https://github.com/olimorris/onedarkpro.nvim)
+- [`patstockwell/vim-monokai-tasty`](https://github.com/patstockwell/vim-monokai-tasty)
+- [`projekt0n/github-nvim-theme`](https://github.com/projekt0n/github-nvim-theme)
+- [`rebelot/kanagawa.nvim`](https://github.com/rebelot/kanagawa.nvim)
+- [`rose-pine/neovim`](https://github.com/rose-pine/neovim)
+- [`sainnhe/sonokai`](https://github.com/sainnhe/sonokai)
+- [`savq/melange-nvim`](https://github.com/savq/melange-nvim)
+- [`Shatur/neovim-ayu`](https://github.com/Shatur/neovim-ayu)
 
 ## Keymaps
 
@@ -188,21 +197,21 @@ mode (useful e.g. for LazyGit).
 
 #### Window navigation
 
-| Modes |        Keys        | Description                  |
-| :---: | :----------------: | ---------------------------- |
-|   n   |     `Ctrl`+`c`     | Close current window         |
-|   n   |     `Ctrl`+`h`     | Focus window to the left     |
-|   n   |     `Ctrl`+`j`     | Focus window below           |
-|   n   |     `Ctrl`+`k`     | Focus window above           |
-|   n   |     `Ctrl`+`l`     | Focus window to the right    |
-|   n   | `Ctrl`+`Shift`+`H` | Move window to the left      |
-|   n   | `Ctrl`+`Shift`+`J` | Move window below            |
-|   n   | `Ctrl`+`Shift`+`K` | Move window above            |
-|   n   | `Ctrl`+`Shift`+`L` | Move window to the right     |
-|   n   |     `Ctrl`+`<`     | Decrease window width        |
-|   n   |     `Ctrl`+`>`     | Increase window width        |
-|   n   |     `Ctrl`+`-`     | Decrease window height       |
-|   n   |     `Ctrl`+`+`     | Increase window height       |
+| Modes |        Keys        | Description               |
+| :---: | :----------------: | ------------------------- |
+|   n   |     `Ctrl`+`c`     | Close current window      |
+|   n   |     `Ctrl`+`h`     | Focus window to the left  |
+|   n   |     `Ctrl`+`j`     | Focus window below        |
+|   n   |     `Ctrl`+`k`     | Focus window above        |
+|   n   |     `Ctrl`+`l`     | Focus window to the right |
+|   n   | `Ctrl`+`Shift`+`H` | Move window to the left   |
+|   n   | `Ctrl`+`Shift`+`J` | Move window below         |
+|   n   | `Ctrl`+`Shift`+`K` | Move window above         |
+|   n   | `Ctrl`+`Shift`+`L` | Move window to the right  |
+|   n   |     `Ctrl`+`<`     | Decrease window width     |
+|   n   |     `Ctrl`+`>`     | Increase window width     |
+|   n   |     `Ctrl`+`-`     | Decrease window height    |
+|   n   |     `Ctrl`+`+`     | Increase window height    |
 
 #### Files/Buffers
 
@@ -353,6 +362,15 @@ mode (useful e.g. for LazyGit).
 |   n   | `Leader` `E`  | Open diagnostics list   |
 |   n   | `Leader` `lr` | Rename symbol           |
 | n, v  | `Leader` `ca` | Code actions            |
+|   n   | `Leader` `lc` | Code actions            |
+|   n   | `Leader` `lp` | Peek definition         |
+|   n   | `Leader` `lP` | Peek type definition    |
+|   n   | `Leader` `lg` | Go to definition        |
+|   n   | `Leader` `lG` | Go to type definition   |
+|   n   | `Leader` `lh` | Incoming calls          |
+|   n   | `Leader` `lH` | Outgoing calls          |
+|   n   | `Leader` `lF` | Find references         |
+|   n   | `Leader` `lo` | Outline                 |
 |   n   | `Leader` `ld` | Definition              |
 |   n   | `Leader` `lR` | References              |
 |   n   | `Leader` `li` | Implementations         |

@@ -44,11 +44,30 @@ return {
     { 'folke/neodev.nvim',                 opts = {} },
     {
         'neovim/nvim-lspconfig',
+        dependencies = {
+            {
+                'nvimdev/lspsaga.nvim',
+                dependencies = {
+                    'nvim-treesitter/nvim-treesitter',
+                    'nvim-tree/nvim-web-devicons'
+                },
+                opts = {
+                    ui = {
+                        code_action = '󱠂',
+                        lines = { '╰', '├', '│', '─', '╭' }
+                    },
+                    symbol_in_winbar = {
+                        separator = '  '
+                    }
+                }
+            }
+        },
         config = function()
             -- Setup language servers.
             local lspconfig = require('lspconfig')
             local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+            -- TODO: Improve this
             lspconfig.bashls.setup({ capabilities = lsp_capabilities })
             lspconfig.pyright.setup({ capabilities = lsp_capabilities })
             lspconfig.jsonls.setup({ capabilities = lsp_capabilities })
@@ -102,6 +121,15 @@ return {
 
                     map('n', '<Leader>lr', buf.rename, 'Rename symbol')
                     map({ 'n', 'v' }, '<Leader>ca', buf.code_action, 'Code actions')
+                    map('n', '<Leader>lc', [[:Lspsaga code_action<CR>]], 'Code actions')
+                    map('n', '<Leader>lp', [[:Lspsaga peek_definition<CR>]], 'Peek definition')
+                    map('n', '<Leader>lP', [[:Lspsaga peek_type_definition<CR>]], 'Peek type definition')
+                    map('n', '<Leader>lg', [[:Lspsaga goto_definition<CR>]], 'Go to definition')
+                    map('n', '<Leader>lG', [[:Lspsaga goto_type_definition<CR>]], 'Go to type definition')
+                    map('n', '<Leader>lh', [[:Lspsaga incoming_calls<CR>]], 'Incoming calls')
+                    map('n', '<Leader>lH', [[:Lspsaga outgoing_calls<CR>]], 'Outgoing calls')
+                    map('n', '<Leader>lF', [[:Lspsaga finder<CR>]], 'Find references')
+                    map('n', '<Leader>lo', [[:Lspsaga outline<CR>]], 'Outline')
                     map('n', '<Leader>ld', builtin.lsp_definitions, 'Definition')
                     map('n', '<Leader>lR', builtin.lsp_references, 'References')
                     map('n', '<Leader>li', builtin.lsp_implementations, 'Implementations')
