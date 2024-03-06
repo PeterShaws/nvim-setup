@@ -18,6 +18,7 @@ return {
                         },
                     },
                     indicator = { style = 'none' },
+                    separator_style = "slope",
                     diagnostics = 'nvim_lsp',
                 },
             })

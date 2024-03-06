@@ -1,1 +1,1 @@
-vscode_modern
+monokai-pro-default

@@ -97,7 +97,7 @@ mode (useful e.g. for LazyGit).
 ## Plugins used
 
 <!--
-read ! rg --no-heading -N -o "'[^/]+/[^/]+'" "lua/plugins" | rg -v "colorschemes" | rg -v "textDocument" | cut -d ':' -f 2 | tr -d "'" | sort -u
+read ! rg --no-heading -N -o "'[^/\]]+/[^/\]]+'" "lua/plugins" | rg -v "colorschemes" | rg -v "textDocument" | cut -d ':' -f 2 | tr -d "'" | sort -u
 -->
 
 - [`akinsho/bufferline.nvim`](https://github.com/akinsho/bufferline.nvim)
@@ -116,6 +116,7 @@ read ! rg --no-heading -N -o "'[^/]+/[^/]+'" "lua/plugins" | rg -v "colorschemes
 - [`hrsh7th/cmp-nvim-lsp`](https://github.com/hrsh7th/cmp-nvim-lsp)
 - [`hrsh7th/cmp-path`](https://github.com/hrsh7th/cmp-path)
 - [`hrsh7th/nvim-cmp`](https://github.com/hrsh7th/nvim-cmp)
+- [`ibhagwan/fzf-lua`](https://github.com/ibhagwan/fzf-lua)
 - [`kdheepak/lazygit.nvim`](https://github.com/kdheepak/lazygit.nvim)
 - [`L3MON4D3/LuaSnip`](https://github.com/L3MON4D3/LuaSnip)
 - [`lewis6991/gitsigns.nvim`](https://github.com/lewis6991/gitsigns.nvim)
