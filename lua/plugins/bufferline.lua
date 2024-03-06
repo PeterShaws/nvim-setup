@@ -13,7 +13,7 @@ return {
                             filetype = 'neo-tree',
                             text = 'Explorer',
                             highlight = 'Directory',
-                            separator = true,
+                            separator = false,
                             text_align = 'center',
                         },
                     },
