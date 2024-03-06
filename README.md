@@ -27,6 +27,7 @@
     * [`nvim-lspconfig` (language server)](#nvim-lspconfig-language-server)
     * [`neo-tree` (file explorer)](#neo-tree-file-explorer)
     * [`surround` (wrap text with pairs of characters)](#surround-wrap-text-with-pairs-of-characters)
+    * [`fzf-lua` (fuzzy finder)](#fzf-lua-fuzzy-finder)
     * [`telescope` (find things)](#telescope-find-things)
     * [`todo-comments` (to-do tags in comments)](#todo-comments-to-do-tags-in-comments)
     * [`trouble` (diagnostics)](#trouble-diagnostics)
@@ -409,6 +410,15 @@ read ! rg --no-heading -N -o "'[^/]+/[^/]+'" "lua/plugins" | rg "colorschemes" |
 |   n   | `gZZ` | Get Indented String Surround   |
 |   v   | `gz`  | Visual Surround                |
 |   v   | `gZ`  | Visual Indented Surround       |
+
+#### `fzf-lua` (fuzzy finder)
+
+| Modes |    Keys    | Description |
+| :---: | :--------: | ----------- |
+|   n   | `Ctrl`+`\` | Buffers     |
+|   n   | `Ctrl`+`g` | Grep        |
+|   n   | `Ctrl`+`p` | Files       |
+|   n   | `Ctrl`+`i` | Live grep   |
 
 #### `telescope` (find things)
 

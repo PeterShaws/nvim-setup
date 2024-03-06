@@ -43,8 +43,11 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 --[[ Helper functions ]]
 local M = {}
 
-M.map = function(mode, keys, handler, desc)
-    vim.keymap.set(mode, keys, handler, { desc = desc, silent = true })
+M.map = function(mode, keys, handler, desc, opts)
+    opts = opts or {}
+    opts.desc = desc or ''
+    opts.silent = true
+    vim.keymap.set(mode, keys, handler, opts)
 end
 
 return M
