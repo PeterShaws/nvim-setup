@@ -22,7 +22,7 @@ return {
                     enabled = true,
                     leave_dirs_open = true,
                 },
-                hijack_netrw_behavior = "open_default",
+                hijack_netrw_behavior = 'open_default',
             },
             buffers = {
                 follow_current_file = {
@@ -46,7 +46,7 @@ return {
                     { source = 'document_symbols' }
                 },
                 tabs_layout = 'focus',
-                separator = { left = '', right = '', override = 'left' }
+                separator = { left = '▏', right = '▕' },
             }
         })
 

@@ -18,7 +18,7 @@ return {
                         },
                     },
                     indicator = { style = 'none' },
-                    separator_style = "slope",
+                    separator_style = 'thin',
                     diagnostics = 'nvim_lsp',
                 },
             })
