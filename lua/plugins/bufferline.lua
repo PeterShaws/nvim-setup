@@ -13,7 +13,7 @@ return {
                             filetype = 'neo-tree',
                             text = 'Explorer',
                             highlight = 'Directory',
-                            separator = false,
+                            separator = true,
                             text_align = 'center',
                         },
                     },
@@ -25,7 +25,7 @@ return {
 
             for i = 1, 9 do
                 local keys = string.format('<A-%d>', i)
-                local command = string.format([[:lua require('bufferline').go_to(%d, true)]], i)
+                local command = string.format([[:lua require('bufferline').go_to(%d, true)<CR>]], i)
                 local desc = string.format('Focus buffer #%d', i)
                 map('n', keys, command, desc)
             end

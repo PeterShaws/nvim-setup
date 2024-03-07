@@ -23,6 +23,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     group = augroup,
     desc = 'Set ColorColumn on changing colorschemes',
     callback = function()
+        ---@diagnostic disable-next-line: undefined-field
         local hl = vim.api.nvim_get_hl_by_name('CursorLine', true)
         vim.api.nvim_set_hl(0, 'ColorColumn', { bg = hl.background })
     end
@@ -40,13 +41,13 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 })
 
 --[[ Helper functions ]]
-local M = {}
+local utils = {}
 
-M.map = function(mode, keys, handler, desc, opts)
+utils.map = function(mode, keys, handler, desc, opts)
     opts = opts or {}
     opts.desc = desc or ''
     opts.silent = true
     vim.keymap.set(mode, keys, handler, opts)
 end
 
-return M
+return utils

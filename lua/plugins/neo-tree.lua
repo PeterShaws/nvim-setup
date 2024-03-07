@@ -13,7 +13,6 @@ return {
         require('neo-tree').setup({
             sources = {
                 'filesystem',
-                'buffers',
                 'git_status',
                 'document_symbols'
             },
@@ -23,12 +22,6 @@ return {
                     leave_dirs_open = true,
                 },
                 hijack_netrw_behavior = 'open_default',
-            },
-            buffers = {
-                follow_current_file = {
-                    enabled = true,
-                    leave_dirs_open = true,
-                },
             },
             git_status = {
                 follow_current_file = {
@@ -41,11 +34,10 @@ return {
                 winbar = true,
                 sources = {
                     { source = 'filesystem' },
-                    { source = 'buffers' },
                     { source = 'git_status' },
                     { source = 'document_symbols' }
                 },
-                tabs_layout = 'focus',
+                tabs_layout = 'start',
                 separator = { left = '▏', right = '▕' },
             }
         })
