@@ -1,4 +1,4 @@
-local u = require('user.utils')
+local map = require('user.utils').map
 
 return {
     'goolord/alpha-nvim',
@@ -23,6 +23,6 @@ return {
 
         alpha.setup(theta.config)
 
-        u.map('n', '<Leader>a', [[:Alpha<CR>]], 'Dashboard')
+        map('n', '<Leader>a', [[:Alpha<CR>]], 'Dashboard')
     end,
 }

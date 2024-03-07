@@ -1,4 +1,4 @@
-local u = require('user.utils')
+local map = require('user.utils').map
 
 return {
     'voldikss/vim-floaterm',
@@ -7,7 +7,7 @@ return {
         vim.g.floaterm_height = 0.92
         vim.g.floaterm_borderchars = '─│─│╭╮╯╰'
 
-        u.map('n', '<F12>', [[:FloatermToggle<CR>]], 'Toggle floating terminal')
-        u.map('t', '<F12>', [[:FloatermToggle<CR>]], 'Toggle floating terminal')
+        map('n', '<F12>', [[:FloatermToggle<CR>]], 'Toggle floating terminal')
+        map('t', '<F12>', [[:FloatermToggle<CR>]], 'Toggle floating terminal')
     end,
 }

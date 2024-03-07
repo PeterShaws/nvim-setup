@@ -1,6 +1,6 @@
 vim.opt.updatetime = 400
 
-local u = require('user.utils')
+local map = require('user.utils').map
 
 local function highlight_symbol(event)
     local id = vim.tbl_get(event, 'data', 'client_id')
@@ -95,10 +95,10 @@ return {
 
             -- Global mappings.
             -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-            u.map('n', '[d', vim.diagnostic.goto_prev, 'Previous diagnostic')
-            u.map('n', ']d', vim.diagnostic.goto_next, 'Next diagnostic')
-            u.map('n', '<Leader>e', vim.diagnostic.open_float, 'Show diagnostic')
-            u.map('n', '<Leader>E', vim.diagnostic.setloclist, 'Open diagnostics list')
+            map('n', '[d', vim.diagnostic.goto_prev, 'Previous diagnostic')
+            map('n', ']d', vim.diagnostic.goto_next, 'Next diagnostic')
+            map('n', '<Leader>e', vim.diagnostic.open_float, 'Show diagnostic')
+            map('n', '<Leader>E', vim.diagnostic.setloclist, 'Open diagnostics list')
 
             -- Use LspAttach autocommand to only map the following keys
             -- after the language server attaches to the current buffer
@@ -110,39 +110,37 @@ return {
 
                     -- Local buffer mappings.
                     -- See `:help vim.lsp.*` for documentation on any of the below functions
-                    local map = function(mode, key, handler, desc)
-                        vim.keymap.set(mode, key, handler, {
-                            buffer = event.buf, desc = desc, silent = true
-                        })
+                    local bmap = function(mode, key, handler, desc)
+                        map(mode, key, handler, desc, { buffer = event.buf })
                     end
 
                     local buf = vim.lsp.buf
                     local builtin = require('telescope.builtin')
 
-                    map('n', '<Leader>lr', buf.rename, 'Rename symbol')
-                    map({ 'n', 'v' }, '<Leader>ca', buf.code_action, 'Code actions')
-                    map('n', '<Leader>lc', [[:Lspsaga code_action<CR>]], 'Code actions')
-                    map('n', '<Leader>lp', [[:Lspsaga peek_definition<CR>]], 'Peek definition')
-                    map('n', '<Leader>lP', [[:Lspsaga peek_type_definition<CR>]], 'Peek type definition')
-                    map('n', '<Leader>lg', [[:Lspsaga goto_definition<CR>]], 'Go to definition')
-                    map('n', '<Leader>lG', [[:Lspsaga goto_type_definition<CR>]], 'Go to type definition')
-                    map('n', '<Leader>lh', [[:Lspsaga incoming_calls<CR>]], 'Incoming calls')
-                    map('n', '<Leader>lH', [[:Lspsaga outgoing_calls<CR>]], 'Outgoing calls')
-                    map('n', '<Leader>lF', [[:Lspsaga finder<CR>]], 'Find references')
-                    map('n', '<Leader>lo', [[:Lspsaga outline<CR>]], 'Outline')
-                    map('n', '<Leader>ld', builtin.lsp_definitions, 'Definition')
-                    map('n', '<Leader>lR', builtin.lsp_references, 'References')
-                    map('n', '<Leader>li', builtin.lsp_implementations, 'Implementations')
-                    map('n', '<Leader>lD', builtin.lsp_type_definitions, 'Type definition')
-                    map('n', '<Leader>ls', builtin.lsp_document_symbols, 'Document Symbols')
-                    map('n', '<Leader>lw', builtin.lsp_dynamic_workspace_symbols, 'Workspace Symbols')
-                    map('n', '<Leader>lf', function() buf.format({ timeout_ms = 5000 }) end, 'Format Buffer')
-                    map('n', 'K', buf.hover, 'Hover documentation')
-                    map('n', '<C-k>', buf.signature_help, 'Signature documentation')
-                    map('n', 'gD', buf.declaration, 'Go to declaration')
-                    map('n', '<Leader>wf', buf.add_workspace_folder, 'Add workspace folder')
-                    map('n', '<Leader>wr', buf.remove_workspace_folder, 'Remove workspace folder')
-                    map('n', '<Leader>wl', function() print(vim.inspect(buf.list_workspace_folders())) end,
+                    bmap('n', '<Leader>lr', buf.rename, 'Rename symbol')
+                    bmap({ 'n', 'v' }, '<Leader>ca', buf.code_action, 'Code actions')
+                    bmap('n', '<Leader>lc', [[:Lspsaga code_action<CR>]], 'Code actions')
+                    bmap('n', '<Leader>lp', [[:Lspsaga peek_definition<CR>]], 'Peek definition')
+                    bmap('n', '<Leader>lP', [[:Lspsaga peek_type_definition<CR>]], 'Peek type definition')
+                    bmap('n', '<Leader>lg', [[:Lspsaga goto_definition<CR>]], 'Go to definition')
+                    bmap('n', '<Leader>lG', [[:Lspsaga goto_type_definition<CR>]], 'Go to type definition')
+                    bmap('n', '<Leader>lh', [[:Lspsaga incoming_calls<CR>]], 'Incoming calls')
+                    bmap('n', '<Leader>lH', [[:Lspsaga outgoing_calls<CR>]], 'Outgoing calls')
+                    bmap('n', '<Leader>lF', [[:Lspsaga finder<CR>]], 'Find references')
+                    bmap('n', '<Leader>lo', [[:Lspsaga outline<CR>]], 'Outline')
+                    bmap('n', '<Leader>ld', builtin.lsp_definitions, 'Definition')
+                    bmap('n', '<Leader>lR', builtin.lsp_references, 'References')
+                    bmap('n', '<Leader>li', builtin.lsp_implementations, 'Implementations')
+                    bmap('n', '<Leader>lD', builtin.lsp_type_definitions, 'Type definition')
+                    bmap('n', '<Leader>ls', builtin.lsp_document_symbols, 'Document Symbols')
+                    bmap('n', '<Leader>lw', builtin.lsp_dynamic_workspace_symbols, 'Workspace Symbols')
+                    bmap('n', '<Leader>lf', function() buf.format({ timeout_ms = 5000 }) end, 'Format Buffer')
+                    bmap('n', 'K', buf.hover, 'Hover documentation')
+                    bmap('n', '<C-k>', buf.signature_help, 'Signature documentation')
+                    bmap('n', 'gD', buf.declaration, 'Go to declaration')
+                    bmap('n', '<Leader>wf', buf.add_workspace_folder, 'Add workspace folder')
+                    bmap('n', '<Leader>wr', buf.remove_workspace_folder, 'Remove workspace folder')
+                    bmap('n', '<Leader>wl', function() print(vim.inspect(buf.list_workspace_folders())) end,
                         'List workspace folders')
 
                     highlight_symbol(event)

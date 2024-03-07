@@ -1,4 +1,4 @@
-local u = require('user.utils')
+local map = require('user.utils').map
 
 return {
     'vague2k/huez.nvim',
@@ -12,6 +12,6 @@ return {
         local colorscheme = require('huez.api').get_colorscheme()
         vim.cmd.colorscheme(colorscheme)
 
-        u.map('n', '<Leader>fc', [[:Huez<CR>]], 'Colorschemes')
+        map('n', '<Leader>fc', [[:Huez<CR>]], 'Colorschemes')
     end
 }

@@ -1,4 +1,4 @@
-local u = require('user.utils')
+local map = require('user.utils').map
 
 return {
     'folke/todo-comments.nvim',
@@ -8,8 +8,8 @@ return {
         todo_comments.setup({
             keywords = { TEST = { icon = '' } }
         })
-        u.map('n', ']t', function() todo_comments.jump_next() end, 'Next to-do comment')
-        u.map('n', '[t', function() todo_comments.jump_prev() end, 'Previous to-do comment')
-        u.map('n', '<Leader>xt', [[:TodoTrouble<CR>]], 'To-do list')
+        map('n', ']t', function() todo_comments.jump_next() end, 'Next to-do comment')
+        map('n', '[t', function() todo_comments.jump_prev() end, 'Previous to-do comment')
+        map('n', '<Leader>xt', [[:TodoTrouble<CR>]], 'To-do list')
     end
 }

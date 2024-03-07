@@ -1,4 +1,4 @@
-local u = require("user.utils")
+local map = require('user.utils').map
 
 return {
     'ibhagwan/fzf-lua',
@@ -8,9 +8,9 @@ return {
         -- calling `setup` is optional for customization
         require('fzf-lua').setup({})
 
-        u.map('n', '<C-\\>', [[:FzfLua buffers<cr>]], 'FZF: Buffers')
-        u.map('n', '<C-g>', [[:FzfLua grep<cr>]], 'FZF: Grep')
-        u.map('n', '<C-p>', [[:FzfLua files<cr>]], 'FZF: Files')
-        u.map('n', '<C-i>', [[:FzfLua live_grep<cr>]], 'FZF: Live grep')
+        map('n', '<C-\\>', [[:FzfLua buffers<cr>]], 'FZF: Buffers')
+        map('n', '<C-g>', [[:FzfLua grep<cr>]], 'FZF: Grep')
+        map('n', '<C-p>', [[:FzfLua files<cr>]], 'FZF: Files')
+        map('n', '<C-i>', [[:FzfLua live_grep<cr>]], 'FZF: Live grep')
     end
 }

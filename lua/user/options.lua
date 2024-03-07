@@ -35,3 +35,6 @@ opt.tabstop = 4      -- Number of spaces tabs count for
 -- Windows
 opt.splitright = true -- Place new window to the right of current one
 opt.splitbelow = true -- Place new window below the current one
+
+-- Tools
+opt.grepprg = 'rg --vimgrep --smart-case --follow'

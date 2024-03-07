@@ -23,7 +23,6 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     group = augroup,
     desc = 'Set ColorColumn on changing colorschemes',
     callback = function()
-        ---@diagnostic disable-next-line: undefined-field
         local hl = vim.api.nvim_get_hl_by_name('CursorLine', true)
         vim.api.nvim_set_hl(0, 'ColorColumn', { bg = hl.background })
     end

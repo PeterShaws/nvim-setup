@@ -1,4 +1,4 @@
-local u = require('user.utils')
+local map = require('user.utils').map
 
 return {
     'folke/noice.nvim',
@@ -38,6 +38,6 @@ return {
             }
         })
         require('telescope').load_extension('noice')
-        u.map('n', '<Leader>fm', [[:Telescope noice<CR>]], 'Messages')
+        map('n', '<Leader>fm', [[:Telescope noice<CR>]], 'Messages')
     end,
 }
