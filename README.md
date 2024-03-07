@@ -395,6 +395,7 @@ read ! rg --no-heading -N -o "'[^/]+/[^/]+'" "lua/plugins" | rg "colorschemes" |
 |   n   |     `F2`     | File explorer       |
 |   n   |     `F3`     | Open Buffers        |
 |   n   |     `F4`     | Git Status          |
+|   n   |     `F9`     | Document Symbols    |
 |   n   | `Shift`+`F2` | Close file explorer |
 
 #### `surround` (wrap text with pairs of characters)
