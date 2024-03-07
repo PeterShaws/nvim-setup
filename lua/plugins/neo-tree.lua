@@ -43,9 +43,8 @@ return {
         })
 
         map('n', '<F2>', [[:Neotree filesystem reveal left<CR>]], 'File explorer')
-        map('n', '<F3>', [[:Neotree buffers reveal left<CR>]], 'Open Buffers')
-        map('n', '<F4>', [[:Neotree git_status reveal left<CR>]], 'Git Status')
-        map('n', '<F9>', [[:Neotree document_symbols left<CR>]], 'Document Symbols')
+        map('n', '<F3>', [[:Neotree git_status reveal left<CR>]], 'Git Status')
+        map('n', '<F4>', [[:Neotree document_symbols left<CR>]], 'Document Symbols')
         map('n', '<S-F2>', [[:Neotree close<CR>]], 'Close file explorer')
         vim.api.nvim_create_user_command('CloseNeotree', [[:Neotree close<CR>]], {})
     end,

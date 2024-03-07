@@ -132,8 +132,8 @@ read ! rg --no-heading -N -o "'[^/\]]+/[^/\]]+'" "lua/plugins" | rg -v "colorsch
 - [`nvim-telescope/telescope-ui-select.nvim`](https://github.com/nvim-telescope/telescope-ui-select.nvim)
 - [`nvim-telescope/telescope.nvim`](https://github.com/nvim-telescope/telescope.nvim)
 - [`nvim-tree/nvim-web-devicons`](https://github.com/nvim-tree/nvim-web-devicons)
-- [`nvim-treesitter/nvim-treesitter-textobjects`](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
 - [`nvim-treesitter/nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter)
+- [`nvim-treesitter/nvim-treesitter-textobjects`](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
 - [`nvimdev/lspsaga.nvim`](https://github.com/nvimdev/lspsaga.nvim)
 - [`nvimtools/none-ls.nvim`](https://github.com/nvimtools/none-ls.nvim)
 - [`rafamadriz/friendly-snippets`](https://github.com/rafamadriz/friendly-snippets)
@@ -169,17 +169,23 @@ read ! rg --no-heading -N -o "'[^/]+/[^/]+'" "lua/plugins" | rg "colorschemes" |
 - [`loctvl842/monokai-pro.nvim`](https://github.com/loctvl842/monokai-pro.nvim)
 - [`lunacookies/vim-colors-xcode`](https://github.com/lunacookies/vim-colors-xcode)
 - [`lunarvim/horizon.nvim`](https://github.com/lunarvim/horizon.nvim)
+- [`marko-cerovac/material.nvim`](https://github.com/marko-cerovac/material.nvim)
+- [`Mofiqul/dracula.nvim`](https://github.com/Mofiqul/dracula.nvim)
 - [`Mofiqul/vscode.nvim`](https://github.com/Mofiqul/vscode.nvim)
 - [`neanias/everforest-nvim`](https://github.com/neanias/everforest-nvim)
 - [`NLKNguyen/papercolor-theme`](https://github.com/NLKNguyen/papercolor-theme)
+- [`nyoom-engineering/oxocarbon.nvim`](https://github.com/nyoom-engineering/oxocarbon.nvim)
 - [`olimorris/onedarkpro.nvim`](https://github.com/olimorris/onedarkpro.nvim)
 - [`patstockwell/vim-monokai-tasty`](https://github.com/patstockwell/vim-monokai-tasty)
 - [`projekt0n/github-nvim-theme`](https://github.com/projekt0n/github-nvim-theme)
 - [`rebelot/kanagawa.nvim`](https://github.com/rebelot/kanagawa.nvim)
+- [`ribru17/bamboo.nvim`](https://github.com/ribru17/bamboo.nvim)
 - [`rose-pine/neovim`](https://github.com/rose-pine/neovim)
+- [`sainnhe/edge`](https://github.com/sainnhe/edge)
 - [`sainnhe/sonokai`](https://github.com/sainnhe/sonokai)
 - [`savq/melange-nvim`](https://github.com/savq/melange-nvim)
 - [`Shatur/neovim-ayu`](https://github.com/Shatur/neovim-ayu)
+- [`shaunsingh/nord.nvim`](https://github.com/shaunsingh/nord.nvim)
 
 ## Keymaps
 
@@ -393,9 +399,8 @@ read ! rg --no-heading -N -o "'[^/]+/[^/]+'" "lua/plugins" | rg "colorschemes" |
 | Modes |     Keys     | Description         |
 | :---: | :----------: | ------------------- |
 |   n   |     `F2`     | File explorer       |
-|   n   |     `F3`     | Open Buffers        |
-|   n   |     `F4`     | Git Status          |
-|   n   |     `F9`     | Document Symbols    |
+|   n   |     `F3`     | Git Status          |
+|   n   |     `F4`     | Document Symbols    |
 |   n   | `Shift`+`F2` | Close file explorer |
 
 #### `surround` (wrap text with pairs of characters)
