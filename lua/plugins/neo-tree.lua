@@ -45,7 +45,8 @@ return {
                     { source = 'git_status' },
                     { source = 'document_symbols' }
                 },
-                tabs_layout = 'focus'
+                tabs_layout = 'focus',
+                separator = { left = '', right = '', override = 'left' }
             }
         })
 
