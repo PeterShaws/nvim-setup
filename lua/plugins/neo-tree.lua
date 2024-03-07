@@ -37,14 +37,15 @@ return {
                     { source = 'git_status' },
                     { source = 'document_symbols' }
                 },
-                tabs_layout = 'start',
+                content_layout = 'center',
+                tabs_layout = 'equal',
                 separator = { left = '▏', right = '▕' },
             }
         })
 
         map('n', '<F2>', [[:Neotree filesystem reveal left<CR>]], 'File explorer')
         map('n', '<F3>', [[:Neotree git_status reveal left<CR>]], 'Git Status')
-        map('n', '<F4>', [[:Neotree document_symbols left<CR>]], 'Document Symbols')
+        map('n', '<F4>', [[:Neotree document_symbols reveal left<CR>]], 'Document Symbols')
         map('n', '<S-F2>', [[:Neotree close<CR>]], 'Close file explorer')
         vim.api.nvim_create_user_command('CloseNeotree', [[:Neotree close<CR>]], {})
     end,
