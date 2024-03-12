@@ -42,7 +42,12 @@
    git clone https://github.com/PeterShaws/nvim-setup.git ~/.config/nvim
    ```
 
-2. `cd` into `~/.config/nvim`;
+2. Enter your Neovim configuration directory:
+
+   ```bash
+   cd ~/.config/nvim
+   ```
+
 3. Launch Neovim (`nvim`) and wait for Lazy's UI to appear, then wait for it to
    sync all plugins;
 4. You should be good to go; if not, relaunch Neovim.
@@ -252,6 +257,8 @@ read ! rg --no-heading -N -o "'[^/]+/[^/]+'" "lua/plugins" | rg "colorschemes" |
 |   n   |   `Leader` `cQ`    | Single quotes to double              |
 |   n   |   `Leader` `ci`    | Reindent file                        |
 |   n   |       `Esc`        | Clear search highlight               |
+|   n   |   `Leader`+`cc`    | Conceal                              |
+|   n   |   `Leader`+`cr`    | Reveal                               |
 
 ### Plugin keymaps
 
