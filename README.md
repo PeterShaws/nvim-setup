@@ -50,6 +50,7 @@
 
 3. Launch Neovim (`nvim`) and wait for Lazy's UI to appear, then wait for it to
    sync all plugins;
+
 4. You should be good to go; if not, relaunch Neovim.
 
 ## Dependencies
@@ -60,7 +61,7 @@
 4. `lazygit`, for interacting with Git;
 5. `ydiff`, a pager that can show diffs side-by-side (optional).
 
-   > `~/.config/lazygit/config.yml`
+   > `~/.config/lazygit/config.yml`:
 
    ```yaml
    gui:
@@ -81,7 +82,7 @@
 
 Use [Neovide](https://neovide.dev) as a GUI for Neovim.
 
-> `~/.config/neovide/config.toml`
+> `~/.config/neovide/config.toml`:
 
 ```toml
 [font]
