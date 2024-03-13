@@ -257,8 +257,8 @@ read ! rg --no-heading -N -o "'[^/]+/[^/]+'" "lua/plugins" | rg "colorschemes" |
 |   n   |   `Leader` `cQ`    | Single quotes to double              |
 |   n   |   `Leader` `ci`    | Reindent file                        |
 |   n   |       `Esc`        | Clear search highlight               |
-|   n   |   `Leader`+`cc`    | Conceal                              |
-|   n   |   `Leader`+`cr`    | Reveal                               |
+|   n   |   `Leader` `cc`    | Conceal                              |
+|   n   |   `Leader` `cr`    | Reveal                               |
 
 ### Plugin keymaps
 
